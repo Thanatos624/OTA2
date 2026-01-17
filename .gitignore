@@ -1,0 +1,34 @@
+Python general ignores
+pycache/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+Virtual Environment
+A common name for the virtual environment folder is 'venv' or '.venv'
+If you use a different name, add it here.
+venv/
+.venv/
+env/
+.env/
+
+IDE and editor configuration files
+.vscode/
+.idea/
+
+Operating System generated files
+.DS_Store
+Thumbs.db
+
+Project-specific generated files and folders
+This includes the configuration file which changes during runtime
+and all folders created by the simulation for updates and communication.
+config.ini
+updates/
+malicious_updates/
+tcu_downloads/
+shared_for_ecu/
+tcu_acks/

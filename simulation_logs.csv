@@ -1,0 +1,1831 @@
+2025-12-12T02:57:29.212418,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T02:57:29.313174,ecu,log,ECU Receiver process started.
+2025-12-12T02:57:29.414153,server,status,Running
+2025-12-12T02:57:29.414153,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T02:57:29.414153,server,log,* Serving Flask app 'oem_server'
+2025-12-12T02:57:29.414153,server,log,* Debug mode: off
+2025-12-12T02:57:29.523047,malicious_server,status,Running
+2025-12-12T02:57:29.523047,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T02:57:29.523928,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T02:57:29.523928,malicious_server,log,* Debug mode: off
+2025-12-12T02:57:30.283567,ecu,status,Listening
+2025-12-12T02:57:30.283567,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T02:57:31.454256,tcu,status,Idle
+2025-12-12T02:57:31.454256,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T02:57:31.562618,server,log, OEM DEPLOY: Deployed 'firmware_v1.2.bin'.
+2025-12-12T02:57:34.409592,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:57:34.410337,tcu,status,Checking
+2025-12-12T02:57:34.410337,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T02:57:34.955807,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:57:34.956337,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:57:35.718701,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:57:35.719643,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:57:35.719643,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:57:36.480072,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T02:57:37.243290,tcu,status,Downloading
+2025-12-12T02:57:37.243799,tcu,progress,0
+2025-12-12T02:57:38.006411,server,log,Serving firmware_v1.2.bin to TCU...
+2025-12-12T02:57:38.007166,tcu,progress,100.0
+2025-12-12T02:57:38.007166,tcu,log,Download complete.
+2025-12-12T02:57:38.007166,tcu,progress,100
+2025-12-12T02:57:38.754698,tcu,status,Verifying
+2025-12-12T02:57:38.754698,tcu,log,Verifying file integrity...
+2025-12-12T02:57:39.597636,tcu,log,Server checksum: d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T02:57:39.598147,tcu,log,Local checksum:  d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T02:57:40.358191,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T02:57:40.359219,tcu,log,Checksum match! File is valid.
+2025-12-12T02:57:41.122461,tcu,log,Transferred 'firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T02:57:41.123502,tcu,status,Awaiting ACK
+2025-12-12T02:57:41.123502,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.2.bin...
+2025-12-12T02:57:41.442739,ecu,status,Applying Update
+2025-12-12T02:57:41.442739,ecu,log,New update 'firmware_v1.2.bin' detected!
+2025-12-12T02:57:42.480149,ecu,status,Flashing
+2025-12-12T02:57:42.480149,ecu,log,Initiating flashing sequence...
+2025-12-12T02:57:43.459582,ecu,log,Writing to memory block 1/3...
+2025-12-12T02:57:44.223412,ecu,log,Writing to memory block 2/3...
+2025-12-12T02:57:45.096745,ecu,log,Writing to memory block 3/3...
+2025-12-12T02:57:45.875863,ecu,log,Verifying written blocks...
+2025-12-12T02:57:46.747459,ecu,log,Update applied successfully.
+2025-12-12T02:57:46.747459,ecu,status,Success
+2025-12-12T02:57:47.678451,ecu,log,Cleaned up 'firmware_v1.2.bin'.
+2025-12-12T02:57:47.678451,ecu,log,Sent acknowledgment to TCU.
+2025-12-12T02:57:48.205454,tcu,log,ACK received from ECU for firmware_v1.2.bin.
+2025-12-12T02:57:48.205454,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T02:57:48.205454,tcu,status,Success
+2025-12-12T02:57:51.717940,ecu,status,Listening
+2025-12-12T02:57:55.375529,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'requirements.txt' as 'malicious_firmware_v1.3.bin'.
+2025-12-12T02:57:57.785697,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:57:57.786340,tcu,status,Checking
+2025-12-12T02:57:57.786340,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T02:57:58.331277,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:57:58.332457,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:57:59.094408,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:57:59.095433,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:57:59.095433,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:57:59.822575,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T02:57:59.822575,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T02:58:00.592631,tcu,status,Downloading
+2025-12-12T02:58:00.592631,tcu,progress,0
+2025-12-12T02:58:01.467222,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T02:58:01.467731,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T02:58:01.468740,tcu,status,Failed
+2025-12-12T02:58:10.399855,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:58:10.400731,tcu,status,Checking
+2025-12-12T02:58:10.401802,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T02:58:10.836029,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:58:10.837900,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:58:11.680169,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:58:11.680169,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:58:11.682179,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:58:12.439319,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T02:58:12.439319,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T02:58:13.204045,tcu,status,Downloading
+2025-12-12T02:58:13.204803,tcu,progress,0
+2025-12-12T02:58:13.969400,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T02:58:13.970201,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T02:58:13.971714,tcu,status,Failed
+2025-12-12T02:58:15.897034,tcu,log,SECURITY ENABLED: Checksum verification is ON.
+2025-12-12T02:58:16.768456,tcu,log,SECURITY DISABLED: Checksum verification is OFF.
+2025-12-12T02:58:19.450694,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:58:19.453698,tcu,status,Checking
+2025-12-12T02:58:19.453698,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T02:58:19.988021,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:58:19.989027,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:58:20.726608,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:58:20.727647,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:58:20.728666,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:58:21.569646,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T02:58:21.569646,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T02:58:22.303691,tcu,status,Downloading
+2025-12-12T02:58:22.303691,tcu,progress,0
+2025-12-12T02:58:23.051993,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T02:58:23.052685,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T02:58:23.053767,tcu,status,Failed
+2025-12-12T02:58:29.727200,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:58:29.728083,tcu,status,Checking
+2025-12-12T02:58:29.728083,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T02:58:30.165157,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:58:30.166169,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:58:30.927755,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:58:30.927755,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:58:30.930276,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:58:31.693731,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T02:58:31.694608,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T02:58:32.455918,tcu,status,Downloading
+2025-12-12T02:58:32.456683,tcu,progress,0
+2025-12-12T02:58:33.220880,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T02:58:33.221880,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T02:58:33.224386,tcu,status,Failed
+2025-12-12T02:58:39.755193,tcu,log,SECURITY ENABLED: Checksum verification is ON.
+2025-12-12T02:58:40.694658,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T02:58:40.697341,tcu,status,Checking
+2025-12-12T02:58:40.697341,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T02:58:41.241619,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T02:58:41.243251,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T02:58:42.002191,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T02:58:42.002191,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T02:58:42.003206,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T02:58:42.765905,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T02:58:42.765905,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T02:58:43.520900,tcu,status,Downloading
+2025-12-12T02:58:43.520900,tcu,progress,0
+2025-12-12T02:58:44.267015,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T02:58:44.268824,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T02:58:44.269519,tcu,status,Failed
+2025-12-12T09:42:05.517920,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T09:42:05.625816,ecu,log,ECU Receiver process started.
+2025-12-12T09:42:06.048868,malicious_server,status,Running
+2025-12-12T09:42:06.048868,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T09:42:06.050379,server,status,Running
+2025-12-12T09:42:06.050379,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T09:42:06.050379,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T09:42:06.051397,malicious_server,log,* Debug mode: off
+2025-12-12T09:42:06.051715,server,log,* Serving Flask app 'oem_server'
+2025-12-12T09:42:06.051715,server,log,* Debug mode: off
+2025-12-12T09:42:06.594552,ecu,status,Listening
+2025-12-12T09:42:06.594552,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T09:42:07.910219,tcu,status,Idle
+2025-12-12T09:42:07.910219,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T09:42:10.472514,server,log, OEM DEPLOY: Deployed 'firmware_v1.2.bin'.
+2025-12-12T09:42:14.633710,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T09:42:14.633710,tcu,status,Checking
+2025-12-12T09:42:14.634713,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T09:42:15.070856,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T09:42:15.070856,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T09:42:15.836998,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T09:42:15.945786,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T09:42:15.946804,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T09:42:16.712510,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T09:42:17.368144,tcu,status,Downloading
+2025-12-12T09:42:17.368144,tcu,progress,0
+2025-12-12T09:42:18.137475,server,log,Serving firmware_v1.2.bin to TCU...
+2025-12-12T09:42:18.246553,tcu,progress,100.0
+2025-12-12T09:42:18.246553,tcu,log,Download complete.
+2025-12-12T09:42:18.247554,tcu,progress,100
+2025-12-12T09:42:19.007989,tcu,status,Verifying
+2025-12-12T09:42:19.009275,tcu,log,Verifying file integrity...
+2025-12-12T09:42:19.773411,tcu,log,Server checksum: d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T09:42:19.774411,tcu,log,Local checksum:  d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T09:42:20.538046,tcu,log,Checksum match! File is valid.
+2025-12-12T09:42:21.305064,tcu,log,Transferred 'firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T09:42:21.306078,tcu,status,Awaiting ACK
+2025-12-12T09:42:21.307073,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.2.bin...
+2025-12-12T09:42:21.848521,ecu,status,Applying Update
+2025-12-12T09:42:21.849532,ecu,log,New update 'firmware_v1.2.bin' detected!
+2025-12-12T09:42:22.832936,ecu,status,Flashing
+2025-12-12T09:42:22.833929,ecu,log,Initiating flashing sequence...
+2025-12-12T09:42:23.865367,ecu,log,Writing to memory block 1/3...
+2025-12-12T09:42:24.637906,ecu,log,Writing to memory block 2/3...
+2025-12-12T09:42:25.407382,ecu,log,Writing to memory block 3/3...
+2025-12-12T09:42:26.281581,ecu,log,Verifying written blocks...
+2025-12-12T09:42:27.045021,ecu,log,Update applied successfully.
+2025-12-12T09:42:27.046023,ecu,status,Success
+2025-12-12T09:42:28.121362,ecu,log,Cleaned up 'firmware_v1.2.bin'.
+2025-12-12T09:42:28.122366,ecu,log,Sent acknowledgment to TCU.
+2025-12-12T09:42:28.333014,tcu,log,ACK received from ECU for firmware_v1.2.bin.
+2025-12-12T09:42:28.334018,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T09:42:28.334758,tcu,status,Success
+2025-12-12T09:42:32.058589,ecu,status,Listening
+2025-12-12T09:42:49.126539,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'malicious.txt' as 'malicious_firmware_v1.3.bin'.
+2025-12-12T09:42:54.298057,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T09:42:54.299106,tcu,status,Checking
+2025-12-12T09:42:54.299106,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T09:42:54.737026,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T09:42:54.847000,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T09:42:55.598336,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T09:42:55.599268,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T09:42:55.599268,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T09:42:56.332126,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T09:42:56.333149,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T09:42:57.084455,tcu,status,Downloading
+2025-12-12T09:42:57.084455,tcu,progress,0
+2025-12-12T09:42:57.847515,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T09:42:57.848514,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T09:42:57.850024,tcu,status,Failed
+2025-12-12T09:47:40.379592,tcu,log,SECURITY DISABLED: Checksum verification is OFF.
+2025-12-12T09:47:41.975688,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T09:47:41.978700,tcu,status,Checking
+2025-12-12T09:47:41.978700,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T09:47:42.522657,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T09:47:42.525343,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T09:47:43.270617,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T09:47:43.270617,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T09:47:43.272636,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T09:47:44.127338,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T09:47:44.128324,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T09:47:44.783537,tcu,status,Downloading
+2025-12-12T09:47:44.784459,tcu,progress,0
+2025-12-12T09:47:45.549528,server,log,Serving malicious_firmware_v1.3.bin to TCU...
+2025-12-12T09:47:45.550539,tcu,log,Download/Processing Error: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/download/malicious_firmware_v1.3.bin
+2025-12-12T09:47:45.552741,tcu,status,Failed
+2025-12-12T10:35:15.517833,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T10:35:15.624469,ecu,log,ECU Receiver process started.
+2025-12-12T10:35:15.830549,server,status,Running
+2025-12-12T10:35:15.831554,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T10:35:15.831554,malicious_server,status,Running
+2025-12-12T10:35:15.831554,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T10:35:15.831554,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T10:35:15.831554,malicious_server,log,* Debug mode: off
+2025-12-12T10:35:15.831554,server,log,* Serving Flask app 'oem_server'
+2025-12-12T10:35:15.831554,server,log,* Debug mode: off
+2025-12-12T10:35:16.579225,ecu,status,Listening
+2025-12-12T10:35:16.579225,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T10:35:17.858501,tcu,status,Idle
+2025-12-12T10:35:17.859007,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T10:35:23.421477,malicious_server,log, MALICIOUS DEPLOY: File selection cancelled.
+2025-12-12T10:36:54.469264,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'malicious file - Copy (2).txt' as 'malicious_firmware_v1.2.bin'.
+2025-12-12T10:36:55.414706,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T10:36:55.414706,tcu,status,Checking
+2025-12-12T10:36:55.415673,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T10:36:55.853226,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T10:36:55.853226,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T10:36:56.620188,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T10:36:56.620188,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T10:36:56.620188,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T10:36:57.383491,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T10:36:57.383491,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T10:36:58.145366,tcu,status,Downloading
+2025-12-12T10:36:58.145366,tcu,progress,0
+2025-12-12T10:36:58.908254,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T10:36:59.017715,tcu,progress,100.0
+2025-12-12T10:36:59.017715,tcu,log,Download complete.
+2025-12-12T10:36:59.017715,tcu,progress,100
+2025-12-12T10:36:59.778893,tcu,status,Verifying
+2025-12-12T10:36:59.778893,tcu,log,Verifying file integrity...
+2025-12-12T10:37:00.546226,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T10:37:00.546226,tcu,log,Local checksum:  3f0672aa0b52fe9884b09b39a4a66081488e4577a61fbf780486e5214660d920
+2025-12-12T10:37:01.202988,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T10:37:01.202988,tcu,log,Checksum match! File is valid.
+2025-12-12T10:37:01.968865,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T10:37:01.968865,tcu,status,Awaiting ACK
+2025-12-12T10:37:01.968865,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T10:37:02.736061,ecu,status,Applying Update
+2025-12-12T10:37:02.736061,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T10:37:03.720111,ecu,status,Flashing
+2025-12-12T10:37:03.720111,ecu,log,Initiating flashing sequence...
+2025-12-12T10:37:04.812127,ecu,log,Writing to memory block 1/3...
+2025-12-12T10:37:05.575904,ecu,log,Writing to memory block 2/3...
+2025-12-12T10:37:06.450097,ecu,log,Writing to memory block 3/3...
+2025-12-12T10:37:07.215090,ecu,log,Verifying written blocks...
+2025-12-12T10:37:08.089188,ecu,status,COMPROMISED
+2025-12-12T10:37:08.089188,ecu,log,[!!!] SYSTEM ALERT: UNAUTHORIZED FIRMWARE DETECTED RUNNING
+2025-12-12T10:37:09.071208,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T10:37:09.071208,ecu,log,Sent acknowledgment to TCU.
+2025-12-12T10:37:09.072369,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T10:37:09.072369,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T10:37:09.072369,tcu,status,Success
+2025-12-12T10:37:13.112188,ecu,status,Listening
+2025-12-12T10:37:31.215357,server,log, OEM DEPLOY: Deployed 'firmware_v1.3.bin'.
+2025-12-12T10:37:35.838543,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T10:37:35.839659,tcu,status,Checking
+2025-12-12T10:37:35.839659,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T10:37:36.370486,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T10:37:36.371488,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T10:37:37.135033,server,log,Latest version available: firmware_v1.3.bin (v1.3)
+2025-12-12T10:37:37.135963,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T10:37:37.135963,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T10:37:37.897279,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T10:37:37.897279,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T10:37:38.670099,tcu,status,Downloading
+2025-12-12T10:37:38.670099,tcu,progress,0
+2025-12-12T10:37:39.439653,server,log,Serving firmware_v1.3.bin to TCU...
+2025-12-12T10:37:39.439653,tcu,progress,100.0
+2025-12-12T10:37:39.439653,tcu,log,Download complete.
+2025-12-12T10:37:39.440711,tcu,progress,100
+2025-12-12T10:37:40.187099,tcu,status,Verifying
+2025-12-12T10:37:40.188102,tcu,log,Verifying file integrity...
+2025-12-12T10:37:40.952381,tcu,log,Server checksum: e43fe89753d6ef8e5047359f3727bf25ef03bd355b356040f6f21d32c7d13b12
+2025-12-12T10:37:40.953381,tcu,log,Local checksum:  e43fe89753d6ef8e5047359f3727bf25ef03bd355b356040f6f21d32c7d13b12
+2025-12-12T10:37:41.701573,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T10:37:41.702078,tcu,log,Checksum match! File is valid.
+2025-12-12T10:37:42.557090,tcu,log,Transferred 'firmware_v1.3.bin' from OEM server to ECU folder.
+2025-12-12T10:37:42.558085,tcu,status,Awaiting ACK
+2025-12-12T10:37:42.558085,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.3.bin...
+2025-12-12T10:37:43.436807,ecu,status,Applying Update
+2025-12-12T10:37:43.436807,ecu,log,New update 'firmware_v1.3.bin' detected!
+2025-12-12T10:37:44.418156,ecu,status,Flashing
+2025-12-12T10:37:44.418156,ecu,log,Initiating flashing sequence...
+2025-12-12T10:37:45.400884,ecu,log,Writing to memory block 1/3...
+2025-12-12T10:37:46.273694,ecu,log,Writing to memory block 2/3...
+2025-12-12T10:37:47.019928,ecu,log,Writing to memory block 3/3...
+2025-12-12T10:37:47.882115,ecu,log,Verifying written blocks...
+2025-12-12T10:37:48.633278,ecu,log,Update applied successfully.
+2025-12-12T10:37:48.633278,ecu,status,Success
+2025-12-12T10:37:49.689599,ecu,log,Cleaned up 'firmware_v1.3.bin'.
+2025-12-12T10:37:49.690735,ecu,log,Sent acknowledgment to TCU.
+2025-12-12T10:37:50.626326,tcu,log,ACK received from ECU for firmware_v1.3.bin.
+2025-12-12T10:37:50.628326,tcu,log,Version updated to 1.3 in config.ini
+2025-12-12T10:37:50.628326,tcu,status,Success
+2025-12-12T10:37:53.727626,ecu,status,Listening
+2025-12-12T11:16:43.105556,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T11:16:43.210075,ecu,log,ECU Receiver process started.
+2025-12-12T11:16:43.427665,malicious_server,status,Running
+2025-12-12T11:16:43.427665,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T11:16:43.427665,server,status,Running
+2025-12-12T11:16:43.427665,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T11:16:43.427665,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T11:16:43.428664,malicious_server,log,* Debug mode: off
+2025-12-12T11:16:43.428664,server,log,* Serving Flask app 'oem_server'
+2025-12-12T11:16:43.428664,server,log,* Debug mode: off
+2025-12-12T11:16:44.270156,ecu,status,Listening
+2025-12-12T11:16:44.270156,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T11:16:45.392509,tcu,status,Idle
+2025-12-12T11:16:45.392509,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T11:16:48.275918,ecu,log,ECU Watchdog/Resilience is now OFF.
+2025-12-12T11:17:11.499177,malicious_server,log, MALICIOUS DEPLOY: File selection cancelled.
+2025-12-12T11:18:23.265464,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'mailciousupdate - Copy (3).txt' as 'malicious_firmware_v1.2.bin'.
+2025-12-12T11:18:25.824546,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T11:18:25.927566,tcu,status,Checking
+2025-12-12T11:18:25.927566,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T11:18:26.349014,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T11:18:26.459235,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T11:18:27.212550,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T11:18:27.212550,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T11:18:27.212550,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T11:18:27.979818,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T11:18:27.980701,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T11:18:28.745284,tcu,status,Downloading
+2025-12-12T11:18:28.745284,tcu,progress,0
+2025-12-12T11:18:29.511890,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T11:18:29.511890,tcu,log,Download complete.
+2025-12-12T11:18:29.512886,tcu,progress,100
+2025-12-12T11:18:30.274346,tcu,status,Verifying
+2025-12-12T11:18:30.274346,tcu,log,Verifying file integrity...
+2025-12-12T11:18:31.041135,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T11:18:31.041135,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T11:18:31.805087,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T11:18:31.806084,tcu,log,Checksum match! File is valid.
+2025-12-12T11:18:32.569115,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T11:18:32.570216,tcu,status,Awaiting ACK
+2025-12-12T11:18:32.570216,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T11:18:33.425155,ecu,status,Applying Update
+2025-12-12T11:18:33.426033,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T11:18:34.411765,ecu,status,Flashing
+2025-12-12T11:18:34.412793,ecu,log,Initiating flashing sequence...
+2025-12-12T11:18:35.395241,ecu,log,Writing to memory block 1/3...
+2025-12-12T11:18:36.158481,ecu,log,Writing to memory block 2/3...
+2025-12-12T11:18:37.037962,ecu,log,Writing to memory block 3/3...
+2025-12-12T11:18:37.812649,ecu,log,Verifying written blocks...
+2025-12-12T11:18:38.575965,ecu,status,COMPROMISED
+2025-12-12T11:18:38.575965,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T11:18:38.576991,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T11:18:38.576991,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T11:18:39.564733,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T11:18:39.565757,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T11:18:39.565757,tcu,status,Success
+2025-12-12T11:18:39.673552,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T11:18:49.591627,ecu,status,Listening
+2025-12-12T11:18:52.521691,server,log, OEM DEPLOY: Deployed 'firmware_v1.3.bin'.
+2025-12-12T11:18:53.663258,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T11:18:53.663258,tcu,status,Checking
+2025-12-12T11:18:53.664349,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T11:18:54.102258,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T11:18:54.103281,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T11:18:54.869593,server,log,Latest version available: firmware_v1.3.bin (v1.3)
+2025-12-12T11:18:54.870780,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T11:18:54.870780,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T11:18:55.639534,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T11:18:55.640415,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T11:18:56.379856,tcu,status,Downloading
+2025-12-12T11:18:56.380645,tcu,progress,0
+2025-12-12T11:18:57.131631,server,log,Serving firmware_v1.3.bin to TCU...
+2025-12-12T11:18:57.239383,tcu,progress,100.0
+2025-12-12T11:18:57.239383,tcu,log,Download complete.
+2025-12-12T11:18:57.242614,tcu,progress,100
+2025-12-12T11:18:58.003835,tcu,status,Verifying
+2025-12-12T11:18:58.003835,tcu,log,Verifying file integrity...
+2025-12-12T11:18:58.769340,tcu,log,Server checksum: e43fe89753d6ef8e5047359f3727bf25ef03bd355b356040f6f21d32c7d13b12
+2025-12-12T11:18:58.771362,tcu,log,Local checksum:  e43fe89753d6ef8e5047359f3727bf25ef03bd355b356040f6f21d32c7d13b12
+2025-12-12T11:18:59.429286,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T11:18:59.431785,tcu,log,Checksum match! File is valid.
+2025-12-12T11:19:00.198977,tcu,log,Transferred 'firmware_v1.3.bin' from OEM server to ECU folder.
+2025-12-12T11:19:00.199977,tcu,status,Awaiting ACK
+2025-12-12T11:19:00.199977,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.3.bin...
+2025-12-12T11:19:00.747983,ecu,status,Applying Update
+2025-12-12T11:19:00.748979,ecu,log,New update 'firmware_v1.3.bin' detected!
+2025-12-12T11:19:01.732139,ecu,status,Flashing
+2025-12-12T11:19:01.733164,ecu,log,Initiating flashing sequence...
+2025-12-12T11:19:02.721751,ecu,log,Writing to memory block 1/3...
+2025-12-12T11:19:03.601775,ecu,log,Writing to memory block 2/3...
+2025-12-12T11:19:04.373032,ecu,log,Writing to memory block 3/3...
+2025-12-12T11:19:05.145894,ecu,log,Verifying written blocks...
+2025-12-12T11:19:05.919549,ecu,log,Update applied successfully.
+2025-12-12T11:19:05.920462,ecu,status,Success
+2025-12-12T11:19:06.247808,tcu,log,ACK received from ECU for firmware_v1.3.bin.
+2025-12-12T11:19:06.248817,tcu,log,Version updated to 1.3 in config.ini
+2025-12-12T11:19:06.249807,tcu,status,Success
+2025-12-12T11:19:07.020645,ecu,log,Cleaned up 'firmware_v1.3.bin'.
+2025-12-12T11:19:07.020645,ecu,status,Listening
+2025-12-12T11:19:10.040543,ecu,log,ECU Watchdog/Resilience is now ON.
+2025-12-12T11:19:17.578636,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'mailciousupdate - Copy (4).txt' as 'malicious_firmware_v1.4.bin'.
+2025-12-12T11:19:18.017337,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T11:19:18.018350,tcu,status,Checking
+2025-12-12T11:19:18.018350,tcu,log,TCU (v1.3) broadcasting update request...
+2025-12-12T11:19:18.552324,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T11:19:18.553756,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T11:19:19.300641,server,log,Latest version available: firmware_v1.3.bin (v1.3)
+2025-12-12T11:19:19.301557,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T11:19:19.302558,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T11:19:20.068265,malicious_server,log,Serving malicious update: malicious_firmware_v1.4.bin (v1.4)
+2025-12-12T11:19:20.069371,tcu,log,New update found from OEM server! Version: 1.4
+2025-12-12T11:19:20.839879,tcu,status,Downloading
+2025-12-12T11:19:20.839879,tcu,progress,0
+2025-12-12T11:19:21.601233,malicious_server,log,Serving malicious file malicious_firmware_v1.4.bin to TCU...
+2025-12-12T11:19:21.601233,tcu,log,Download complete.
+2025-12-12T11:19:21.602229,tcu,progress,100
+2025-12-12T11:19:22.337488,tcu,status,Verifying
+2025-12-12T11:19:22.338372,tcu,log,Verifying file integrity...
+2025-12-12T11:19:23.071586,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T11:19:23.072698,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T11:19:23.837642,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T11:19:23.838911,tcu,log,Checksum match! File is valid.
+2025-12-12T11:19:24.605891,tcu,log,Transferred 'malicious_firmware_v1.4.bin' from OEM server to ECU folder.
+2025-12-12T11:19:24.607179,tcu,status,Awaiting ACK
+2025-12-12T11:19:24.607179,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.4.bin...
+2025-12-12T11:19:25.154303,ecu,status,Applying Update
+2025-12-12T11:19:25.155403,ecu,log,New update 'malicious_firmware_v1.4.bin' detected!
+2025-12-12T11:19:26.138265,ecu,status,Flashing
+2025-12-12T11:19:26.138265,ecu,log,Initiating flashing sequence...
+2025-12-12T11:19:27.230964,ecu,log,Writing to memory block 1/3...
+2025-12-12T11:19:27.996132,ecu,log,Writing to memory block 2/3...
+2025-12-12T11:19:28.868878,ecu,log,Writing to memory block 3/3...
+2025-12-12T11:19:29.632970,ecu,log,Verifying written blocks...
+2025-12-12T11:19:30.507468,ecu,status,COMPROMISED
+2025-12-12T11:19:30.508347,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T11:19:33.464598,ecu,status,Watchdog Reset
+2025-12-12T11:19:33.465621,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T11:19:34.454169,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T11:19:36.752322,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.4.bin.
+2025-12-12T11:19:36.754705,tcu,status,Rolled Back
+2025-12-12T11:19:36.754705,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.3.
+2025-12-12T11:19:37.516533,ecu,log,Cleaned up 'malicious_firmware_v1.4.bin'.
+2025-12-12T11:19:37.518417,ecu,status,Listening
+2025-12-12T12:13:20.165719,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:13:20.266710,ecu,log,ECU Receiver process started.
+2025-12-12T12:13:20.468541,server,status,Running
+2025-12-12T12:13:20.468541,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:13:20.469544,malicious_server,status,Running
+2025-12-12T12:13:20.469544,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:13:20.469544,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:13:20.469544,server,log,* Debug mode: off
+2025-12-12T12:13:20.469544,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:13:20.469544,malicious_server,log,* Debug mode: off
+2025-12-12T12:13:21.298839,ecu,status,Listening
+2025-12-12T12:13:21.298839,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:13:22.421318,tcu,status,Idle
+2025-12-12T12:13:22.421318,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:13:22.530542,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T12:13:22.640113,tcu,status,Checking
+2025-12-12T12:13:22.640113,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:13:23.075354,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:13:23.076241,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T12:13:23.837931,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:13:23.838931,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:13:23.838931,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:13:24.676616,tcu,log,New update found from OEM server! Version: 1.1
+2025-12-12T12:13:25.433339,tcu,status,Downloading
+2025-12-12T12:13:25.433339,tcu,progress,0
+2025-12-12T12:13:26.191681,server,log,Serving firmware_v1.1.bin to TCU...
+2025-12-12T12:13:26.191681,tcu,progress,100.0
+2025-12-12T12:13:26.191681,tcu,log,Download complete.
+2025-12-12T12:13:26.192685,tcu,progress,100
+2025-12-12T12:13:26.916812,tcu,status,Verifying
+2025-12-12T12:13:26.916812,tcu,log,Verifying file integrity...
+2025-12-12T12:13:27.681243,tcu,log,Server checksum: 564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:13:27.682545,tcu,log,Local checksum:  564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:13:28.448476,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:13:28.448476,tcu,log,Checksum match! File is valid.
+2025-12-12T12:13:29.213098,tcu,log,Transferred 'firmware_v1.1.bin' from OEM server to ECU folder.
+2025-12-12T12:13:29.213979,tcu,status,Awaiting ACK
+2025-12-12T12:13:29.213979,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.1.bin...
+2025-12-12T12:13:29.431350,ecu,status,Applying Update
+2025-12-12T12:13:29.431350,ecu,log,New update 'firmware_v1.1.bin' detected!
+2025-12-12T12:13:30.413751,ecu,status,Flashing
+2025-12-12T12:13:30.413751,ecu,log,Initiating flashing sequence...
+2025-12-12T12:13:31.395352,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:13:32.267948,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:13:33.035199,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:13:33.857255,ecu,log,Verifying written blocks...
+2025-12-12T12:13:34.617428,ecu,log,Update applied successfully.
+2025-12-12T12:13:34.618430,ecu,status,Success
+2025-12-12T12:13:35.272024,tcu,log,ACK received from ECU for firmware_v1.1.bin.
+2025-12-12T12:13:35.272903,tcu,log,Version updated to 1.1 in config.ini
+2025-12-12T12:13:35.273905,tcu,status,Success
+2025-12-12T12:13:35.705496,ecu,log,Cleaned up 'firmware_v1.1.bin'.
+2025-12-12T12:13:35.706523,ecu,status,Listening
+2025-12-12T12:13:38.534774,ecu,log,ECU Watchdog/Resilience is now OFF.
+2025-12-12T12:13:44.547307,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'mailciousupdate - Copy (3).txt' as 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:13:47.906493,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T12:13:47.907511,tcu,status,Checking
+2025-12-12T12:13:47.907511,tcu,log,TCU (v1.1) broadcasting update request...
+2025-12-12T12:13:48.339996,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:13:48.339996,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T12:13:49.209529,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:13:49.210408,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:13:49.211406,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:13:49.969358,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:13:49.970357,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:13:50.628883,tcu,status,Downloading
+2025-12-12T12:13:50.629765,tcu,progress,0
+2025-12-12T12:13:51.502772,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:13:51.502772,tcu,log,Download complete.
+2025-12-12T12:13:51.504050,tcu,progress,100
+2025-12-12T12:13:52.272843,tcu,status,Verifying
+2025-12-12T12:13:52.272843,tcu,log,Verifying file integrity...
+2025-12-12T12:13:53.037760,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:13:53.039781,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:13:53.801084,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:13:53.802964,tcu,log,Checksum match! File is valid.
+2025-12-12T12:13:54.563894,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:13:54.564918,tcu,status,Awaiting ACK
+2025-12-12T12:13:54.564918,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:13:54.892152,ecu,status,Applying Update
+2025-12-12T12:13:54.893176,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:13:55.874446,ecu,status,Flashing
+2025-12-12T12:13:55.875358,ecu,log,Initiating flashing sequence...
+2025-12-12T12:13:56.858796,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:13:57.736434,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:13:58.499943,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:13:59.371735,ecu,log,Verifying written blocks...
+2025-12-12T12:14:00.136456,ecu,status,COMPROMISED
+2025-12-12T12:14:00.136456,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:14:00.137379,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T12:14:00.137379,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T12:14:00.571205,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T12:14:00.573240,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T12:14:00.573240,tcu,status,Success
+2025-12-12T12:14:01.119197,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:14:11.210752,ecu,status,Listening
+2025-12-12T12:14:20.821786,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:14:20.821786,ecu,log,ECU Receiver process started.
+2025-12-12T12:14:21.022571,malicious_server,status,Running
+2025-12-12T12:14:21.023567,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:14:21.023567,server,status,Running
+2025-12-12T12:14:21.023567,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:14:21.023567,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:14:21.023567,malicious_server,log,* Debug mode: off
+2025-12-12T12:14:21.023567,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:14:21.023567,server,log,* Debug mode: off
+2025-12-12T12:14:21.857746,ecu,status,Listening
+2025-12-12T12:14:21.857746,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:14:22.954509,tcu,status,Idle
+2025-12-12T12:14:22.954509,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:14:25.778074,ecu,log,ECU Watchdog/Resilience is now ON.
+2025-12-12T12:14:29.546881,malicious_server,log, MALICIOUS DEPLOY: Deployed custom file 'mailciousupdate - Copy (3).txt' as 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:14:49.896769,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T12:14:49.897791,tcu,status,Checking
+2025-12-12T12:14:49.897791,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:14:50.446068,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:14:50.446068,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T12:14:51.210088,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:14:51.210088,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:14:51.210088,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:14:51.972800,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:14:51.972800,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:14:52.737991,tcu,status,Downloading
+2025-12-12T12:14:52.737991,tcu,progress,0
+2025-12-12T12:14:53.490248,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:14:53.597780,tcu,log,Download complete.
+2025-12-12T12:14:53.597780,tcu,progress,100
+2025-12-12T12:14:54.359789,tcu,status,Verifying
+2025-12-12T12:14:54.359789,tcu,log,Verifying file integrity...
+2025-12-12T12:14:55.125384,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:14:55.125384,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:14:55.888246,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:14:55.889166,tcu,log,Checksum match! File is valid.
+2025-12-12T12:14:56.653368,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:14:56.654368,tcu,status,Awaiting ACK
+2025-12-12T12:14:56.655363,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:14:57.197466,ecu,status,Applying Update
+2025-12-12T12:14:57.198488,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:14:58.183234,ecu,status,Flashing
+2025-12-12T12:14:58.184255,ecu,log,Initiating flashing sequence...
+2025-12-12T12:14:59.279416,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:15:00.044427,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:15:00.809644,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:15:01.682284,ecu,log,Verifying written blocks...
+2025-12-12T12:15:02.448062,ecu,status,COMPROMISED
+2025-12-12T12:15:02.448571,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:15:05.525066,ecu,status,Watchdog Reset
+2025-12-12T12:15:05.525066,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T12:15:06.518795,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T12:15:08.727987,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.2.bin.
+2025-12-12T12:15:08.727987,tcu,status,Rolled Back
+2025-12-12T12:15:08.727987,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.0.
+2025-12-12T12:15:09.496509,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:15:09.496509,ecu,status,Listening
+2025-12-12T12:15:11.675879,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T12:15:11.787566,tcu,status,Checking
+2025-12-12T12:15:11.787566,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:15:12.230564,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:15:12.231557,server,log,TCU connected. Scanning 'updates'...
+2025-12-12T12:15:12.996749,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:15:12.997948,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:15:12.997948,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:15:13.759146,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:15:13.760146,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:15:14.519515,tcu,status,Downloading
+2025-12-12T12:15:14.519515,tcu,progress,0
+2025-12-12T12:15:15.283907,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:15:15.284933,tcu,log,Download complete.
+2025-12-12T12:15:15.284933,tcu,progress,100
+2025-12-12T12:15:16.048749,tcu,status,Verifying
+2025-12-12T12:15:16.048749,tcu,log,Verifying file integrity...
+2025-12-12T12:15:16.811628,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:15:16.812632,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:15:17.575400,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:15:17.577398,tcu,log,Checksum match! File is valid.
+2025-12-12T12:15:18.338263,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:15:18.340255,tcu,status,Awaiting ACK
+2025-12-12T12:15:18.340255,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:15:18.664491,ecu,status,Applying Update
+2025-12-12T12:15:18.664491,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:15:19.644655,ecu,status,Flashing
+2025-12-12T12:15:19.644655,ecu,log,Initiating flashing sequence...
+2025-12-12T12:15:20.630755,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:15:21.386595,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:15:22.269119,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:15:23.033175,ecu,log,Verifying written blocks...
+2025-12-12T12:15:23.799672,ecu,status,COMPROMISED
+2025-12-12T12:15:23.799672,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:15:26.858889,ecu,status,Watchdog Reset
+2025-12-12T12:15:26.859772,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T12:15:27.831519,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T12:15:30.438598,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.2.bin.
+2025-12-12T12:15:30.439669,tcu,status,Rolled Back
+2025-12-12T12:15:30.439669,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.0.
+2025-12-12T12:15:30.877990,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:15:30.879015,ecu,status,Listening
+2025-12-12T12:24:34.024389,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:24:34.125835,ecu,log,ECU Receiver process started.
+2025-12-12T12:24:34.326850,malicious_server,status,Running
+2025-12-12T12:24:34.326850,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:24:34.326850,server,status,Running
+2025-12-12T12:24:34.326850,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:24:34.326850,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:24:34.326850,malicious_server,log,* Debug mode: off
+2025-12-12T12:24:34.326850,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:24:34.326850,server,log,* Debug mode: off
+2025-12-12T12:24:35.158396,ecu,status,Listening
+2025-12-12T12:24:35.158396,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:24:36.287855,tcu,status,Idle
+2025-12-12T12:24:36.287855,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:24:41.082312,server,log, OEM DEPLOY: Deployed 'firmware_v1.2.bin'.
+2025-12-12T12:24:45.187123,tcu,log,[~] Manual update check triggered by GUI.
+2025-12-12T12:24:45.188058,tcu,status,Checking
+2025-12-12T12:24:45.188058,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:24:45.737825,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:24:45.738836,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:24:45.738836,server,log,Scanning 'updates'...
+2025-12-12T12:24:46.500157,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2025-12-12T12:24:46.501154,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:24:46.501154,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:24:47.267957,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:24:48.034250,tcu,status,Downloading
+2025-12-12T12:24:48.034250,tcu,progress,0
+2025-12-12T12:24:48.799216,server,log,Serving firmware_v1.2.bin to TCU...
+2025-12-12T12:24:48.800306,tcu,progress,100.0
+2025-12-12T12:24:48.800306,tcu,log,Download complete.
+2025-12-12T12:24:48.800306,tcu,progress,100
+2025-12-12T12:24:49.564598,tcu,status,Verifying
+2025-12-12T12:24:49.565622,tcu,log,Verifying file integrity...
+2025-12-12T12:24:50.331110,tcu,log,Server checksum: d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T12:24:50.331110,tcu,log,Local checksum:  d223e10f6f38a7c2ad4931ee6b6199c583cfdc45fbdd885ea5e7384fd53e9921
+2025-12-12T12:24:51.064260,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:24:51.065128,tcu,log,Checksum match! File is valid.
+2025-12-12T12:24:51.834711,tcu,log,Transferred 'firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:24:51.835737,tcu,status,Awaiting ACK
+2025-12-12T12:24:51.835737,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.2.bin...
+2025-12-12T12:24:52.255666,ecu,status,Applying Update
+2025-12-12T12:24:52.256700,ecu,log,New update 'firmware_v1.2.bin' detected!
+2025-12-12T12:24:53.310701,ecu,status,Flashing
+2025-12-12T12:24:53.312211,ecu,log,Initiating flashing sequence...
+2025-12-12T12:24:54.256014,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:24:55.098450,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:24:55.972462,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:24:56.736397,ecu,log,Verifying written blocks...
+2025-12-12T12:24:57.502030,ecu,log,Update applied successfully.
+2025-12-12T12:24:57.502030,ecu,status,Success
+2025-12-12T12:24:57.939634,tcu,log,ACK received from ECU for firmware_v1.2.bin.
+2025-12-12T12:24:57.939634,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T12:24:57.940141,tcu,status,Success
+2025-12-12T12:24:58.487399,ecu,log,Cleaned up 'firmware_v1.2.bin'.
+2025-12-12T12:24:58.488428,ecu,status,Listening
+2025-12-12T12:27:28.760265,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:27:28.865195,ecu,log,ECU Receiver process started.
+2025-12-12T12:27:29.083955,server,status,Running
+2025-12-12T12:27:29.083955,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:27:29.084954,malicious_server,status,Running
+2025-12-12T12:27:29.084954,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:27:29.084954,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:27:29.084954,server,log,* Debug mode: off
+2025-12-12T12:27:29.084954,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:27:29.084954,malicious_server,log,* Debug mode: off
+2025-12-12T12:27:29.847000,ecu,status,Listening
+2025-12-12T12:27:29.847871,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:27:30.977883,tcu,status,Idle
+2025-12-12T12:27:30.978679,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:33:01.178927,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:33:01.289649,ecu,log,ECU Receiver process started.
+2025-12-12T12:33:01.391956,server,status,Running
+2025-12-12T12:33:01.391956,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:33:01.391956,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:33:01.391956,server,log,* Debug mode: off
+2025-12-12T12:33:01.391956,malicious_server,status,Running
+2025-12-12T12:33:01.392957,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:33:01.392957,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:33:01.392957,malicious_server,log,* Debug mode: off
+2025-12-12T12:33:02.301157,ecu,status,Listening
+2025-12-12T12:33:02.302227,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:33:03.395277,tcu,status,Idle
+2025-12-12T12:33:03.396303,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:33:05.378971,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:33:05.379973,tcu,status,Checking
+2025-12-12T12:33:05.379973,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:33:05.927616,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:33:05.928493,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:33:05.928493,server,log,Scanning 'updates'...
+2025-12-12T12:33:06.690504,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:33:06.691373,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:33:06.691373,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:33:07.460283,tcu,log,New update found from OEM server! Version: 1.1
+2025-12-12T12:33:08.224567,tcu,status,Downloading
+2025-12-12T12:33:08.225774,tcu,progress,0
+2025-12-12T12:33:08.991483,server,log,Serving firmware_v1.1.bin to TCU...
+2025-12-12T12:33:08.992507,tcu,progress,100.0
+2025-12-12T12:33:08.992507,tcu,log,Download complete.
+2025-12-12T12:33:08.992507,tcu,progress,100
+2025-12-12T12:33:09.764502,tcu,status,Verifying
+2025-12-12T12:33:09.765487,tcu,log,Verifying file integrity...
+2025-12-12T12:33:10.529053,tcu,log,Server checksum: 564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:33:10.530059,tcu,log,Local checksum:  564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:33:11.291913,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:33:11.293209,tcu,log,Checksum match! File is valid.
+2025-12-12T12:33:12.057992,tcu,log,Transferred 'firmware_v1.1.bin' from OEM server to ECU folder.
+2025-12-12T12:33:12.059015,tcu,status,Awaiting ACK
+2025-12-12T12:33:12.059015,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.1.bin...
+2025-12-12T12:33:12.384211,ecu,status,Applying Update
+2025-12-12T12:33:12.385082,ecu,log,New update 'firmware_v1.1.bin' detected!
+2025-12-12T12:33:13.368180,ecu,status,Flashing
+2025-12-12T12:33:13.369043,ecu,log,Initiating flashing sequence...
+2025-12-12T12:33:14.462498,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:33:15.214764,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:33:16.060841,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:33:16.828328,ecu,log,Verifying written blocks...
+2025-12-12T12:33:17.687088,ecu,log,Update applied successfully.
+2025-12-12T12:33:17.688112,ecu,status,Success
+2025-12-12T12:33:18.126555,tcu,log,ACK received from ECU for firmware_v1.1.bin.
+2025-12-12T12:33:18.127561,tcu,log,Version updated to 1.1 in config.ini
+2025-12-12T12:33:18.127561,tcu,status,Success
+2025-12-12T12:33:18.670351,ecu,log,Cleaned up 'firmware_v1.1.bin'.
+2025-12-12T12:33:18.671376,ecu,status,Listening
+2025-12-12T12:33:36.235445,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:33:41.444662,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:33:41.445533,tcu,status,Checking
+2025-12-12T12:33:41.445533,tcu,log,TCU (v1.1) broadcasting update request...
+2025-12-12T12:33:41.994086,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:33:41.995604,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:33:41.995604,server,log,Scanning 'updates'...
+2025-12-12T12:33:42.730617,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:33:42.731644,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:33:42.732806,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:33:43.471424,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:33:43.471424,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:33:44.222629,tcu,status,Downloading
+2025-12-12T12:33:44.223623,tcu,progress,0
+2025-12-12T12:33:44.990222,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:33:45.100024,tcu,log,Download complete.
+2025-12-12T12:33:45.102051,tcu,progress,100
+2025-12-12T12:33:45.863729,tcu,status,Verifying
+2025-12-12T12:33:45.864619,tcu,log,Verifying file integrity...
+2025-12-12T12:33:46.627998,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:33:46.628998,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:33:47.285486,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:33:47.286511,tcu,log,Checksum match! File is valid.
+2025-12-12T12:33:48.159869,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:33:48.160870,tcu,status,Awaiting ACK
+2025-12-12T12:33:48.160870,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:33:48.929348,ecu,status,Applying Update
+2025-12-12T12:33:48.930379,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:33:49.900179,ecu,status,Flashing
+2025-12-12T12:33:49.901267,ecu,log,Initiating flashing sequence...
+2025-12-12T12:33:50.875267,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:33:51.752794,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:33:52.525888,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:33:53.294808,ecu,log,Verifying written blocks...
+2025-12-12T12:33:54.175199,ecu,status,COMPROMISED
+2025-12-12T12:33:54.177198,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:33:57.117734,ecu,status,Watchdog Reset
+2025-12-12T12:33:57.118603,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T12:33:58.105930,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T12:34:00.190559,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.2.bin.
+2025-12-12T12:34:00.191584,tcu,status,Rolled Back
+2025-12-12T12:34:00.192581,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.1.
+2025-12-12T12:34:01.175425,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:34:01.176559,ecu,status,Listening
+2025-12-12T12:34:12.705499,ecu,log,ECU Watchdog/Resilience is now OFF.
+2025-12-12T12:34:13.642639,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:34:13.643637,tcu,status,Checking
+2025-12-12T12:34:13.644638,tcu,log,TCU (v1.1) broadcasting update request...
+2025-12-12T12:34:14.064023,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:34:14.065043,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:34:14.066038,server,log,Scanning 'updates'...
+2025-12-12T12:34:14.907877,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:34:14.908900,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:34:14.909896,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:34:15.673370,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:34:15.674392,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:34:16.438953,tcu,status,Downloading
+2025-12-12T12:34:16.439842,tcu,progress,0
+2025-12-12T12:34:17.204014,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:34:17.205257,tcu,log,Download complete.
+2025-12-12T12:34:17.205257,tcu,progress,100
+2025-12-12T12:34:17.859194,tcu,status,Verifying
+2025-12-12T12:34:17.861076,tcu,log,Verifying file integrity...
+2025-12-12T12:34:18.624062,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:34:18.626164,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:34:19.393917,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:34:19.396312,tcu,log,Checksum match! File is valid.
+2025-12-12T12:34:20.166264,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:34:20.167288,tcu,status,Awaiting ACK
+2025-12-12T12:34:20.168284,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:34:20.274836,ecu,status,Applying Update
+2025-12-12T12:34:20.274836,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:34:21.261964,ecu,status,Flashing
+2025-12-12T12:34:21.263064,ecu,log,Initiating flashing sequence...
+2025-12-12T12:34:22.356309,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:34:23.122959,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:34:23.984398,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:34:24.734594,ecu,log,Verifying written blocks...
+2025-12-12T12:34:25.610097,ecu,status,COMPROMISED
+2025-12-12T12:34:25.611088,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:34:25.612163,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T12:34:25.612163,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T12:34:26.222572,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T12:34:26.223974,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T12:34:26.225100,tcu,status,Success
+2025-12-12T12:34:26.526879,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:34:28.004756,ecu,log,ECU Watchdog/Resilience is now ON.
+2025-12-12T12:34:30.679142,server,log, DEPLOYED: 'firmware_v1.3.bin'.
+2025-12-12T12:34:31.495395,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:34:31.496396,tcu,status,Checking
+2025-12-12T12:34:31.497400,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T12:34:32.029931,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:34:32.030933,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:34:32.031930,server,log,Scanning 'updates'...
+2025-12-12T12:34:32.884975,server,log,Latest version available: firmware_v1.3.bin (v1.3)
+2025-12-12T12:34:32.885999,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:34:32.886996,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:34:33.652543,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:34:33.653415,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T12:34:34.311155,tcu,status,Downloading
+2025-12-12T12:34:34.312239,tcu,progress,0
+2025-12-12T12:34:35.077090,server,log,Serving firmware_v1.3.bin to TCU...
+2025-12-12T12:34:35.078113,tcu,progress,100.0
+2025-12-12T12:34:35.079111,tcu,log,Download complete.
+2025-12-12T12:34:35.080110,tcu,progress,100
+2025-12-12T12:34:35.838545,tcu,status,Verifying
+2025-12-12T12:34:35.839556,tcu,log,Verifying file integrity...
+2025-12-12T12:34:36.610058,ecu,status,Listening
+2025-12-12T12:34:36.611081,tcu,log,Server checksum: b6f2bf4da8f51f6d1f179e5e7b54254459ca4f5244d3f3f7ceec7c3bf9ba7dc2
+2025-12-12T12:34:36.612082,tcu,log,Local checksum:  b6f2bf4da8f51f6d1f179e5e7b54254459ca4f5244d3f3f7ceec7c3bf9ba7dc2
+2025-12-12T12:34:37.361337,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:34:37.362361,tcu,log,Checksum match! File is valid.
+2025-12-12T12:34:38.125872,tcu,log,Transferred 'firmware_v1.3.bin' from OEM server to ECU folder.
+2025-12-12T12:34:38.127951,tcu,status,Awaiting ACK
+2025-12-12T12:34:38.127951,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.3.bin...
+2025-12-12T12:34:38.657593,ecu,status,Applying Update
+2025-12-12T12:34:38.658984,ecu,log,New update 'firmware_v1.3.bin' detected!
+2025-12-12T12:34:39.641376,ecu,status,Flashing
+2025-12-12T12:34:39.642366,ecu,log,Initiating flashing sequence...
+2025-12-12T12:34:40.624049,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:34:41.392108,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:34:42.266936,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:34:43.033245,ecu,log,Verifying written blocks...
+2025-12-12T12:34:43.906983,ecu,log,Update applied successfully.
+2025-12-12T12:34:43.909023,ecu,status,Success
+2025-12-12T12:34:44.234571,tcu,log,ACK received from ECU for firmware_v1.3.bin.
+2025-12-12T12:34:44.237570,tcu,log,Version updated to 1.3 in config.ini
+2025-12-12T12:34:44.238569,tcu,status,Success
+2025-12-12T12:34:44.888509,ecu,log,Cleaned up 'firmware_v1.3.bin'.
+2025-12-12T12:34:44.890536,ecu,status,Listening
+2025-12-12T12:46:06.843523,tcu,log,Checksum Verification is now ON.
+2025-12-12T12:46:07.690045,tcu,log,Checksum Verification is now OFF.
+2025-12-12T12:46:09.740835,ecu,log,ECU Watchdog/Resilience is now OFF.
+2025-12-12T12:46:10.159963,ecu,log,ECU Watchdog/Resilience is now ON.
+2025-12-12T12:46:39.970655,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:46:39.970655,ecu,log,ECU Receiver process started.
+2025-12-12T12:46:40.172486,malicious_server,status,Running
+2025-12-12T12:46:40.173481,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:46:40.173481,server,status,Running
+2025-12-12T12:46:40.174483,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:46:40.174483,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:46:40.174483,malicious_server,log,* Debug mode: off
+2025-12-12T12:46:40.174483,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:46:40.174483,server,log,* Debug mode: off
+2025-12-12T12:46:41.000681,ecu,log,ECU Watchdog/Resilience is now OFF.
+2025-12-12T12:46:41.001707,ecu,status,Listening
+2025-12-12T12:46:41.001707,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:46:42.125525,tcu,status,Idle
+2025-12-12T12:46:42.126519,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:46:43.533298,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:46:43.534322,tcu,status,Checking
+2025-12-12T12:46:43.534322,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:46:44.062306,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:46:44.063329,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:46:44.063329,server,log,Scanning 'updates'...
+2025-12-12T12:46:44.767903,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:46:44.768963,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:46:44.768963,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:46:45.534738,tcu,log,New update found from OEM server! Version: 1.1
+2025-12-12T12:46:46.300132,tcu,status,Downloading
+2025-12-12T12:46:46.300132,tcu,progress,0
+2025-12-12T12:46:47.064882,server,log,Serving firmware_v1.1.bin to TCU...
+2025-12-12T12:46:47.065760,tcu,progress,100.0
+2025-12-12T12:46:47.065760,tcu,log,Download complete.
+2025-12-12T12:46:47.065760,tcu,progress,100
+2025-12-12T12:46:47.909722,tcu,status,Verifying
+2025-12-12T12:46:47.910711,tcu,log,Verifying file integrity...
+2025-12-12T12:46:48.662543,tcu,log,Server checksum: 564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:46:48.663537,tcu,log,Local checksum:  564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T12:46:49.426047,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:46:49.427192,tcu,log,Checksum match! File is valid.
+2025-12-12T12:46:50.172650,tcu,log,Transferred 'firmware_v1.1.bin' from OEM server to ECU folder.
+2025-12-12T12:46:50.173652,tcu,status,Awaiting ACK
+2025-12-12T12:46:50.173652,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.1.bin...
+2025-12-12T12:46:51.046015,ecu,status,Applying Update
+2025-12-12T12:46:51.047120,ecu,log,New update 'firmware_v1.1.bin' detected!
+2025-12-12T12:46:52.138208,ecu,status,Flashing
+2025-12-12T12:46:52.139429,ecu,log,Initiating flashing sequence...
+2025-12-12T12:46:53.104258,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:46:53.965658,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:46:54.735258,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:46:55.502580,ecu,log,Verifying written blocks...
+2025-12-12T12:46:56.375479,ecu,log,Update applied successfully.
+2025-12-12T12:46:56.375479,ecu,status,Success
+2025-12-12T12:46:57.252410,tcu,log,ACK received from ECU for firmware_v1.1.bin.
+2025-12-12T12:46:57.253405,tcu,log,Version updated to 1.1 in config.ini
+2025-12-12T12:46:57.254407,tcu,status,Success
+2025-12-12T12:46:57.360397,ecu,log,Cleaned up 'firmware_v1.1.bin'.
+2025-12-12T12:46:57.361426,ecu,status,Listening
+2025-12-12T12:47:02.203342,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:47:03.253035,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:47:03.253035,tcu,status,Checking
+2025-12-12T12:47:03.254039,tcu,log,TCU (v1.1) broadcasting update request...
+2025-12-12T12:47:03.763199,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:47:03.764080,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:47:03.764080,server,log,Scanning 'updates'...
+2025-12-12T12:47:04.490735,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:47:04.491252,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:47:04.491773,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:47:05.225440,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:47:05.226462,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:47:05.957359,tcu,status,Downloading
+2025-12-12T12:47:05.958384,tcu,progress,0
+2025-12-12T12:47:06.801439,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:47:06.802460,tcu,log,Download complete.
+2025-12-12T12:47:06.802460,tcu,progress,100
+2025-12-12T12:47:07.530565,tcu,status,Verifying
+2025-12-12T12:47:07.531561,tcu,log,Verifying file integrity...
+2025-12-12T12:47:08.283132,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:47:08.285010,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:47:09.047375,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:47:09.048399,tcu,log,Checksum match! File is valid.
+2025-12-12T12:47:09.920035,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:47:09.921141,tcu,status,Awaiting ACK
+2025-12-12T12:47:09.922061,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:47:10.466212,ecu,status,Applying Update
+2025-12-12T12:47:10.467236,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:47:11.450510,ecu,status,Flashing
+2025-12-12T12:47:11.451513,ecu,log,Initiating flashing sequence...
+2025-12-12T12:47:12.547331,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:47:13.309721,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:47:14.075189,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:47:14.948790,ecu,log,Verifying written blocks...
+2025-12-12T12:47:15.718229,ecu,status,COMPROMISED
+2025-12-12T12:47:15.719365,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:47:15.719365,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T12:47:15.720379,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T12:47:15.937406,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T12:47:15.939429,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T12:47:15.940440,tcu,status,Success
+2025-12-12T12:47:16.770580,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:47:26.719071,ecu,status,Listening
+2025-12-12T12:58:34.803592,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T12:58:34.913119,ecu,log,ECU Receiver process started.
+2025-12-12T12:58:35.014824,server,status,Running
+2025-12-12T12:58:35.015828,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T12:58:35.015828,malicious_server,status,Running
+2025-12-12T12:58:35.015828,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T12:58:35.015828,server,log,* Serving Flask app 'oem_server'
+2025-12-12T12:58:35.015828,server,log,* Debug mode: off
+2025-12-12T12:58:35.015828,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T12:58:35.015828,malicious_server,log,* Debug mode: off
+2025-12-12T12:58:35.862821,ecu,status,Listening
+2025-12-12T12:58:35.862821,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T12:58:37.055299,tcu,status,Idle
+2025-12-12T12:58:37.056312,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T12:58:39.156644,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2025-12-12T12:58:39.892775,tcu,log,[~] Manual update check triggered.
+2025-12-12T12:58:39.893817,tcu,status,Checking
+2025-12-12T12:58:39.893817,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T12:58:40.422540,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T12:58:40.423415,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T12:58:40.423415,server,log,Scanning 'updates'...
+2025-12-12T12:58:41.243902,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T12:58:41.243902,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T12:58:41.243902,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T12:58:42.001319,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T12:58:42.002388,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T12:58:42.732497,tcu,status,Downloading
+2025-12-12T12:58:42.732497,tcu,progress,0
+2025-12-12T12:58:43.445718,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T12:58:43.547315,tcu,log,Download complete.
+2025-12-12T12:58:43.548310,tcu,progress,100
+2025-12-12T12:58:44.312909,tcu,status,Verifying
+2025-12-12T12:58:44.313955,tcu,log,Verifying file integrity...
+2025-12-12T12:58:45.079206,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T12:58:45.080228,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T12:58:45.733605,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T12:58:45.734642,tcu,log,Checksum match! File is valid.
+2025-12-12T12:58:46.500177,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T12:58:46.501198,tcu,status,Awaiting ACK
+2025-12-12T12:58:46.501198,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T12:58:47.047340,ecu,status,Applying Update
+2025-12-12T12:58:47.048363,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T12:58:48.033078,ecu,status,Flashing
+2025-12-12T12:58:48.034103,ecu,log,Initiating flashing sequence...
+2025-12-12T12:58:49.019686,ecu,log,Writing to memory block 1/3...
+2025-12-12T12:58:49.789793,ecu,log,Writing to memory block 2/3...
+2025-12-12T12:58:50.666594,ecu,log,Writing to memory block 3/3...
+2025-12-12T12:58:51.434970,ecu,log,Verifying written blocks...
+2025-12-12T12:58:52.314777,ecu,status,COMPROMISED
+2025-12-12T12:58:52.314777,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T12:58:52.314777,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T12:58:52.315778,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T12:58:52.532735,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T12:58:52.533734,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T12:58:52.534731,tcu,status,Success
+2025-12-12T12:58:53.297780,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T13:31:23.862130,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T13:31:23.970817,ecu,log,ECU Receiver process started.
+2025-12-12T13:31:24.182844,malicious_server,status,Running
+2025-12-12T13:31:24.183839,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T13:31:24.183839,server,status,Running
+2025-12-12T13:31:24.183839,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T13:31:24.183839,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T13:31:24.183839,malicious_server,log,* Debug mode: off
+2025-12-12T13:31:24.183839,server,log,* Serving Flask app 'oem_server'
+2025-12-12T13:31:24.183839,server,log,* Debug mode: off
+2025-12-12T13:31:24.919375,ecu,status,Listening
+2025-12-12T13:31:24.919375,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T13:31:26.142342,tcu,status,Idle
+2025-12-12T13:31:26.143328,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T13:31:33.892250,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2025-12-12T13:31:36.062036,tcu,log,[~] Manual update check triggered.
+2025-12-12T13:31:36.063020,tcu,status,Checking
+2025-12-12T13:31:36.064033,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T13:31:36.488485,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T13:31:36.592219,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T13:31:36.593218,server,log,Scanning 'updates'...
+2025-12-12T13:31:37.355928,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T13:31:37.356975,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T13:31:37.357960,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T13:31:38.122866,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T13:31:38.123873,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T13:31:38.890039,tcu,status,Downloading
+2025-12-12T13:31:38.891038,tcu,progress,0
+2025-12-12T13:31:39.665410,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T13:31:39.667402,tcu,log,Download complete.
+2025-12-12T13:31:39.668403,tcu,progress,100
+2025-12-12T13:31:40.430729,tcu,status,Verifying
+2025-12-12T13:31:40.431752,tcu,log,Verifying file integrity...
+2025-12-12T13:31:41.194563,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T13:31:41.196561,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T13:31:41.959993,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T13:31:41.961997,tcu,log,Checksum match! File is valid.
+2025-12-12T13:31:42.723556,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T13:31:42.724630,tcu,status,Awaiting ACK
+2025-12-12T13:31:42.725180,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T13:31:43.051282,ecu,status,Applying Update
+2025-12-12T13:31:43.052302,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T13:31:44.128358,ecu,status,Flashing
+2025-12-12T13:31:44.130360,ecu,log,Initiating flashing sequence...
+2025-12-12T13:31:45.105311,ecu,log,Writing to memory block 1/3...
+2025-12-12T13:31:45.868568,ecu,log,Writing to memory block 2/3...
+2025-12-12T13:31:46.744444,ecu,log,Writing to memory block 3/3...
+2025-12-12T13:31:47.507786,ecu,log,Verifying written blocks...
+2025-12-12T13:31:48.335339,ecu,status,COMPROMISED
+2025-12-12T13:31:48.335339,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T13:31:48.336333,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM LOCKED.
+2025-12-12T13:31:48.337326,ecu,log,[!!!] RANSOMWARE ENCRYPTION COMPLETE.
+2025-12-12T13:31:48.845475,tcu,log,ACK received from ECU for malicious_firmware_v1.2.bin.
+2025-12-12T13:31:48.846544,tcu,log,Version updated to 1.2 in config.ini
+2025-12-12T13:31:48.847555,tcu,status,Success
+2025-12-12T13:31:49.378564,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T13:31:53.813077,ecu,log,ECU Watchdog/Resilience is now ON.
+2025-12-12T13:31:55.518888,tcu,log,[~] Manual update check triggered.
+2025-12-12T13:31:55.519892,tcu,status,Checking
+2025-12-12T13:31:55.520878,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T13:31:56.064023,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T13:31:56.065998,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T13:31:56.066997,server,log,Scanning 'updates'...
+2025-12-12T13:31:56.827783,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T13:31:56.828777,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T13:31:56.830768,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T13:31:57.572385,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T13:31:57.574382,tcu,log,Current version v1.2 is up to date.
+2025-12-12T13:31:57.576373,tcu,status,Idle
+2025-12-12T13:31:59.394385,ecu,status,Listening
+2025-12-12T13:32:03.172953,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.3.bin'.
+2025-12-12T13:32:04.017432,tcu,log,[~] Manual update check triggered.
+2025-12-12T13:32:04.020446,tcu,status,Checking
+2025-12-12T13:32:04.021449,tcu,log,TCU (v1.2) broadcasting update request...
+2025-12-12T13:32:04.563570,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T13:32:04.566645,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T13:32:04.567647,server,log,Scanning 'updates'...
+2025-12-12T13:32:05.329416,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T13:32:05.331412,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T13:32:05.334405,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T13:32:06.089473,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2025-12-12T13:32:06.091474,tcu,log,New update found from OEM server! Version: 1.3
+2025-12-12T13:32:06.854708,tcu,status,Downloading
+2025-12-12T13:32:06.855729,tcu,progress,0
+2025-12-12T13:32:07.619361,malicious_server,log,Serving malicious file malicious_firmware_v1.3.bin to TCU...
+2025-12-12T13:32:07.621354,tcu,log,Download complete.
+2025-12-12T13:32:07.622351,tcu,progress,100
+2025-12-12T13:32:08.380320,tcu,status,Verifying
+2025-12-12T13:32:08.382359,tcu,log,Verifying file integrity...
+2025-12-12T13:32:09.142580,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T13:32:09.145569,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T13:32:09.908264,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T13:32:09.910257,tcu,log,Checksum match! File is valid.
+2025-12-12T13:32:10.675006,tcu,log,Transferred 'malicious_firmware_v1.3.bin' from OEM server to ECU folder.
+2025-12-12T13:32:10.678065,tcu,status,Awaiting ACK
+2025-12-12T13:32:10.679081,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.3.bin...
+2025-12-12T13:32:11.549666,ecu,status,Applying Update
+2025-12-12T13:32:11.550669,ecu,log,New update 'malicious_firmware_v1.3.bin' detected!
+2025-12-12T13:32:12.534247,ecu,status,Flashing
+2025-12-12T13:32:12.535662,ecu,log,Initiating flashing sequence...
+2025-12-12T13:32:13.515631,ecu,log,Writing to memory block 1/3...
+2025-12-12T13:32:14.388373,ecu,log,Writing to memory block 2/3...
+2025-12-12T13:32:15.152008,ecu,log,Writing to memory block 3/3...
+2025-12-12T13:32:16.024610,ecu,log,Verifying written blocks...
+2025-12-12T13:32:16.790911,ecu,status,COMPROMISED
+2025-12-12T13:32:16.791908,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T13:32:19.847071,ecu,status,Watchdog Reset
+2025-12-12T13:32:19.848074,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T13:32:20.829389,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T13:32:23.886809,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.3.bin.
+2025-12-12T13:32:23.888793,tcu,status,Rolled Back
+2025-12-12T13:32:23.889792,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.2.
+2025-12-12T13:32:23.891789,ecu,log,Cleaned up 'malicious_firmware_v1.3.bin'.
+2025-12-12T13:32:23.892789,ecu,status,Listening
+2025-12-12T13:44:33.871343,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2025-12-12T13:44:33.979303,ecu,log,ECU Receiver process started.
+2025-12-12T13:44:34.291359,malicious_server,status,Running
+2025-12-12T13:44:34.292377,malicious_server,log,[!] Malicious Server process started on port 5001.
+2025-12-12T13:44:34.293369,server,status,Running
+2025-12-12T13:44:34.293369,server,log,[+] OEM Server process started on port 5000.
+2025-12-12T13:44:34.294365,malicious_server,log,* Serving Flask app 'malicious_server'
+2025-12-12T13:44:34.294365,malicious_server,log,* Debug mode: off
+2025-12-12T13:44:34.294365,server,log,* Serving Flask app 'oem_server'
+2025-12-12T13:44:34.294365,server,log,* Debug mode: off
+2025-12-12T13:44:35.033014,ecu,status,Listening
+2025-12-12T13:44:35.034088,ecu,log,[o] ECU online. Waiting for firmware...
+2025-12-12T13:44:36.165023,tcu,status,Idle
+2025-12-12T13:44:36.166099,tcu,log,TCU Client process started. Waiting for trigger...
+2025-12-12T13:44:38.383751,tcu,log,[~] Manual update check triggered.
+2025-12-12T13:44:38.384841,tcu,status,Checking
+2025-12-12T13:44:38.385849,tcu,log,TCU (v1.0) broadcasting update request...
+2025-12-12T13:44:38.821161,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T13:44:38.928007,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T13:44:38.930035,server,log,Scanning 'updates'...
+2025-12-12T13:44:39.692289,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T13:44:39.694314,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T13:44:39.695320,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T13:44:40.455628,tcu,log,New update found from OEM server! Version: 1.1
+2025-12-12T13:44:41.218913,tcu,status,Downloading
+2025-12-12T13:44:41.219906,tcu,progress,0
+2025-12-12T13:44:41.982608,server,log,Serving firmware_v1.1.bin to TCU...
+2025-12-12T13:44:41.983754,tcu,progress,100.0
+2025-12-12T13:44:41.983754,tcu,log,Download complete.
+2025-12-12T13:44:41.984762,tcu,progress,100
+2025-12-12T13:44:42.747851,tcu,status,Verifying
+2025-12-12T13:44:42.748853,tcu,log,Verifying file integrity...
+2025-12-12T13:44:43.510306,tcu,log,Server checksum: 564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T13:44:43.511306,tcu,log,Local checksum:  564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2025-12-12T13:44:44.275103,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T13:44:44.276127,tcu,log,Checksum match! File is valid.
+2025-12-12T13:44:45.040589,tcu,log,Transferred 'firmware_v1.1.bin' from OEM server to ECU folder.
+2025-12-12T13:44:45.042611,tcu,status,Awaiting ACK
+2025-12-12T13:44:45.043612,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.1.bin...
+2025-12-12T13:44:45.145177,ecu,status,Applying Update
+2025-12-12T13:44:45.146178,ecu,log,New update 'firmware_v1.1.bin' detected!
+2025-12-12T13:44:46.190422,ecu,status,Flashing
+2025-12-12T13:44:46.193419,ecu,log,Initiating flashing sequence...
+2025-12-12T13:44:47.184793,ecu,log,Writing to memory block 1/3...
+2025-12-12T13:44:48.030930,ecu,log,Writing to memory block 2/3...
+2025-12-12T13:44:48.795740,ecu,log,Writing to memory block 3/3...
+2025-12-12T13:44:49.673426,ecu,log,Verifying written blocks...
+2025-12-12T13:44:50.444514,ecu,log,Update applied successfully.
+2025-12-12T13:44:50.445627,ecu,status,Success
+2025-12-12T13:44:51.104814,tcu,log,ACK received from ECU for firmware_v1.1.bin.
+2025-12-12T13:44:51.105799,tcu,log,Version updated to 1.1 in config.ini
+2025-12-12T13:44:51.106804,tcu,status,Success
+2025-12-12T13:44:51.432479,ecu,log,Cleaned up 'firmware_v1.1.bin'.
+2025-12-12T13:44:51.433473,ecu,status,Listening
+2025-12-12T13:45:08.526095,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2025-12-12T13:45:13.783739,tcu,log,[~] Manual update check triggered.
+2025-12-12T13:45:13.786653,tcu,status,Checking
+2025-12-12T13:45:13.786653,tcu,log,TCU (v1.1) broadcasting update request...
+2025-12-12T13:45:14.331953,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2025-12-12T13:45:14.333949,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2025-12-12T13:45:14.333949,server,log,Scanning 'updates'...
+2025-12-12T13:45:15.095611,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2025-12-12T13:45:15.096615,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2025-12-12T13:45:15.098604,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2025-12-12T13:45:15.858140,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2025-12-12T13:45:15.860136,tcu,log,New update found from OEM server! Version: 1.2
+2025-12-12T13:45:16.620863,tcu,status,Downloading
+2025-12-12T13:45:16.623075,tcu,progress,0
+2025-12-12T13:45:17.383531,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2025-12-12T13:45:17.492549,tcu,log,Download complete.
+2025-12-12T13:45:17.493541,tcu,progress,100
+2025-12-12T13:45:18.257603,tcu,status,Verifying
+2025-12-12T13:45:18.258603,tcu,log,Verifying file integrity...
+2025-12-12T13:45:19.033020,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2025-12-12T13:45:19.036016,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2025-12-12T13:45:19.795193,tcu,log,WARNING: Checksum verification is disabled!
+2025-12-12T13:45:19.796209,tcu,log,Checksum match! File is valid.
+2025-12-12T13:45:20.562022,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2025-12-12T13:45:20.564014,tcu,status,Awaiting ACK
+2025-12-12T13:45:20.565009,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2025-12-12T13:45:20.781921,ecu,status,Applying Update
+2025-12-12T13:45:20.782864,ecu,log,New update 'malicious_firmware_v1.2.bin' detected!
+2025-12-12T13:45:21.765014,ecu,status,Flashing
+2025-12-12T13:45:21.767025,ecu,log,Initiating flashing sequence...
+2025-12-12T13:45:22.747073,ecu,log,Writing to memory block 1/3...
+2025-12-12T13:45:23.619403,ecu,log,Writing to memory block 2/3...
+2025-12-12T13:45:24.383335,ecu,log,Writing to memory block 3/3...
+2025-12-12T13:45:25.254782,ecu,log,Verifying written blocks...
+2025-12-12T13:45:26.017570,ecu,status,COMPROMISED
+2025-12-12T13:45:26.017570,ecu,log,[!!!] MALWARE EXECUTING - ROOT ACCESS GRANTED
+2025-12-12T13:45:28.980773,ecu,status,Watchdog Reset
+2025-12-12T13:45:28.981783,ecu,log,[!] WATCHDOG TIMER TRIGGERED: System Freeze Detected.
+2025-12-12T13:45:30.071003,ecu,log,[!] Forcing ECU Reboot...
+2025-12-12T13:45:32.616271,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.2.bin.
+2025-12-12T13:45:32.617265,tcu,status,Rolled Back
+2025-12-12T13:45:32.617265,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.1.
+2025-12-12T13:45:33.058555,ecu,log,Cleaned up 'malicious_firmware_v1.2.bin'.
+2025-12-12T13:45:33.060557,ecu,status,Listening
+2026-01-10T16:13:40.959242,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-10T16:13:41.066370,ecu,log,ECU Receiver process started.
+2026-01-10T16:13:41.268094,malicious_server,status,Running
+2026-01-10T16:13:41.268094,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-10T16:13:41.268094,server,status,Running
+2026-01-10T16:13:41.268094,server,log,[+] OEM Server process started on port 5000.
+2026-01-10T16:13:41.268094,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-10T16:13:41.268094,malicious_server,log,* Debug mode: off
+2026-01-10T16:13:41.268094,server,log,* Serving Flask app 'oem_server'
+2026-01-10T16:13:41.268094,server,log,* Debug mode: off
+2026-01-10T16:13:42.027347,ecu,status,Listening
+2026-01-10T16:13:42.028370,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-10T16:13:43.212094,tcu,status,Idle
+2026-01-10T16:13:43.213094,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-10T16:13:46.375829,tcu,log,[~] Manual update check triggered.
+2026-01-10T16:13:46.376774,tcu,status,Checking
+2026-01-10T16:13:46.376774,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-10T16:13:46.811556,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-10T16:13:46.920987,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2026-01-10T16:13:46.922078,server,log,Scanning 'updates'...
+2026-01-10T16:13:47.686444,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2026-01-10T16:13:47.686444,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-10T16:13:47.687521,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2026-01-10T16:13:48.450619,tcu,log,New update found from OEM server! Version: 1.1
+2026-01-10T16:13:49.215085,tcu,status,Downloading
+2026-01-10T16:13:49.216111,tcu,progress,0
+2026-01-10T16:13:49.981195,server,log,Serving firmware_v1.1.bin to TCU...
+2026-01-10T16:13:49.982221,tcu,progress,100.0
+2026-01-10T16:13:49.983221,tcu,log,Download complete.
+2026-01-10T16:13:49.983221,tcu,progress,100
+2026-01-10T16:13:50.745155,tcu,status,Verifying
+2026-01-10T16:13:50.746185,tcu,log,Verifying file integrity...
+2026-01-10T16:13:51.509430,tcu,log,Server checksum: 564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2026-01-10T16:13:51.510455,tcu,log,Local checksum:  564175007d00060981f0ad06c9b6921976b3c7e33d657739b56767c7b0bc05bb
+2026-01-10T16:13:52.275751,tcu,log,WARNING: Checksum verification is disabled!
+2026-01-10T16:13:52.276781,tcu,log,Checksum match! File is valid.
+2026-01-10T16:13:53.039953,tcu,log,Transferred 'firmware_v1.1.bin' from OEM server to ECU folder.
+2026-01-10T16:13:53.040832,tcu,status,Awaiting ACK
+2026-01-10T16:13:53.040832,tcu,log,Waiting for acknowledgment from ECU for firmware_v1.1.bin...
+2026-01-10T16:13:53.147585,ecu,status,Updating...
+2026-01-10T16:13:53.148464,ecu,log,----------------------------------------
+2026-01-10T16:13:53.148464,ecu,log,New firmware detected: firmware_v1.1.bin
+2026-01-10T16:13:53.148464,ecu,log,Active Slot: A | Target Slot: B
+2026-01-10T16:13:54.132388,ecu,status,Flashing Slot B
+2026-01-10T16:13:54.133419,ecu,log,Writing image to Partition B...
+2026-01-10T16:13:54.133419,ecu,log,[Slot B] Writing block 1/3...
+2026-01-10T16:13:54.788729,ecu,log,[Slot B] Writing block 2/3...
+2026-01-10T16:13:55.336985,ecu,log,[Slot B] Writing block 3/3...
+2026-01-10T16:13:55.991900,ecu,log,[Slot B] Checksum verification passed.
+2026-01-10T16:13:56.431070,ecu,log,Swapping active partition to Slot B...
+2026-01-10T16:13:57.521947,ecu,log,Rebooting into Slot B...
+2026-01-10T16:13:59.051270,ecu,log,Boot successful. System running on Slot B (v1.1.).
+2026-01-10T16:13:59.052300,ecu,status,Success
+2026-01-10T16:13:59.052300,ecu,log,----------------------------------------
+2026-01-10T16:13:59.053370,tcu,log,ACK received from ECU for firmware_v1.1.bin.
+2026-01-10T16:13:59.053370,tcu,log,Version updated to 1.1 in config.ini
+2026-01-10T16:13:59.053370,tcu,status,Success
+2026-01-10T16:14:02.990053,ecu,status,Slot B Active
+2026-01-10T16:14:10.773071,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.2.bin'.
+2026-01-10T16:14:13.226823,tcu,log,[~] Manual update check triggered.
+2026-01-10T16:14:13.227848,tcu,status,Checking
+2026-01-10T16:14:13.227848,tcu,log,TCU (v1.1) broadcasting update request...
+2026-01-10T16:14:13.663715,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-10T16:14:13.664740,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2026-01-10T16:14:13.664740,server,log,Scanning 'updates'...
+2026-01-10T16:14:14.538409,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2026-01-10T16:14:14.539433,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-10T16:14:14.540430,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2026-01-10T16:14:15.290782,malicious_server,log,Serving malicious update: malicious_firmware_v1.2.bin (v1.2)
+2026-01-10T16:14:15.291824,tcu,log,New update found from OEM server! Version: 1.2
+2026-01-10T16:14:16.056726,tcu,status,Downloading
+2026-01-10T16:14:16.057756,tcu,progress,0
+2026-01-10T16:14:16.819832,malicious_server,log,Serving malicious file malicious_firmware_v1.2.bin to TCU...
+2026-01-10T16:14:16.820856,tcu,log,Download complete.
+2026-01-10T16:14:16.821854,tcu,progress,100
+2026-01-10T16:14:17.583867,tcu,status,Verifying
+2026-01-10T16:14:17.584895,tcu,log,Verifying file integrity...
+2026-01-10T16:14:18.348072,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2026-01-10T16:14:18.348946,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-01-10T16:14:19.116436,tcu,log,WARNING: Checksum verification is disabled!
+2026-01-10T16:14:19.117607,tcu,log,Checksum match! File is valid.
+2026-01-10T16:14:19.878731,tcu,log,Transferred 'malicious_firmware_v1.2.bin' from OEM server to ECU folder.
+2026-01-10T16:14:19.880918,tcu,status,Awaiting ACK
+2026-01-10T16:14:19.880918,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.2.bin...
+2026-01-10T16:14:20.206841,ecu,status,Updating...
+2026-01-10T16:14:20.206841,ecu,log,----------------------------------------
+2026-01-10T16:14:20.207840,ecu,log,New firmware detected: malicious_firmware_v1.2.bin
+2026-01-10T16:14:20.207840,ecu,log,Active Slot: B | Target Slot: A
+2026-01-10T16:14:21.192428,ecu,status,Flashing Slot A
+2026-01-10T16:14:21.192428,ecu,log,Writing image to Partition A...
+2026-01-10T16:14:21.193543,ecu,log,[Slot A] Writing block 1/3...
+2026-01-10T16:14:21.852820,ecu,log,[Slot A] Writing block 2/3...
+2026-01-10T16:14:22.393445,ecu,log,[Slot A] Writing block 3/3...
+2026-01-10T16:14:23.052782,ecu,log,[Slot A] Checksum verification passed.
+2026-01-10T16:14:23.493987,ecu,log,Swapping active partition to Slot A...
+2026-01-10T16:14:24.485355,ecu,log,Rebooting into Slot A...
+2026-01-10T16:14:26.032763,ecu,status,COMPROMISED
+2026-01-10T16:14:26.033693,ecu,log,[!!!] BOOT ERROR: MALICIOUS CODE DETECTED IN STARTUP.
+2026-01-10T16:14:28.006198,ecu,status,Rolling Back
+2026-01-10T16:14:28.007227,ecu,log,[!] WATCHDOG: Boot failure detected.
+2026-01-10T16:14:28.008225,ecu,log,[!] SWITCHING BACK to known good Slot B...
+2026-01-10T16:14:29.567923,ecu,log,[o] Recovered. Running on Slot B (v1.1.).
+2026-01-10T16:14:29.568963,ecu,log,----------------------------------------
+2026-01-10T16:14:29.900154,tcu,log,[!] RECEIVED FAILURE ACK: ECU rejected malicious_firmware_v1.2.bin.
+2026-01-10T16:14:29.901002,tcu,status,Rolled Back
+2026-01-10T16:14:29.901002,tcu,log,[!] SAFETY PROTOCOL: Update failed. Retaining previous version v1.1.
+2026-01-10T16:14:33.583927,ecu,status,Slot B Active
+2026-01-10T16:14:44.437574,ecu,log,ECU Watchdog/Resilience is now OFF.
+2026-01-10T16:14:49.867350,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.3.bin'.
+2026-01-10T16:14:51.983581,tcu,log,[~] Manual update check triggered.
+2026-01-10T16:14:51.984575,tcu,status,Checking
+2026-01-10T16:14:51.985577,tcu,log,TCU (v1.1) broadcasting update request...
+2026-01-10T16:14:52.524154,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-10T16:14:52.525152,server,log,TCU connected. ID Verified: VIN-SIM-998877
+2026-01-10T16:14:52.525152,server,log,Scanning 'updates'...
+2026-01-10T16:14:53.286100,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2026-01-10T16:14:53.287123,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-10T16:14:53.288200,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2026-01-10T16:14:54.159926,malicious_server,log,Serving malicious update: malicious_firmware_v1.3.bin (v1.3)
+2026-01-10T16:14:54.160950,tcu,log,New update found from OEM server! Version: 1.3
+2026-01-10T16:14:54.815310,tcu,status,Downloading
+2026-01-10T16:14:54.816355,tcu,progress,0
+2026-01-10T16:14:55.691214,malicious_server,log,Serving malicious file malicious_firmware_v1.3.bin to TCU...
+2026-01-10T16:14:55.691214,tcu,log,Download complete.
+2026-01-10T16:14:55.691214,tcu,progress,100
+2026-01-10T16:14:56.457211,tcu,status,Verifying
+2026-01-10T16:14:56.458243,tcu,log,Verifying file integrity...
+2026-01-10T16:14:57.219215,tcu,log,Server checksum: fake_checksum_1234567890abcdef
+2026-01-10T16:14:57.220239,tcu,log,Local checksum:  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-01-10T16:14:57.875295,tcu,log,WARNING: Checksum verification is disabled!
+2026-01-10T16:14:57.876370,tcu,log,Checksum match! File is valid.
+2026-01-10T16:14:58.747598,tcu,log,Transferred 'malicious_firmware_v1.3.bin' from OEM server to ECU folder.
+2026-01-10T16:14:58.748699,tcu,status,Awaiting ACK
+2026-01-10T16:14:58.749700,tcu,log,Waiting for acknowledgment from ECU for malicious_firmware_v1.3.bin...
+2026-01-10T16:14:58.858485,ecu,status,Updating...
+2026-01-10T16:14:58.858485,ecu,log,----------------------------------------
+2026-01-10T16:14:58.859482,ecu,log,New firmware detected: malicious_firmware_v1.3.bin
+2026-01-10T16:14:58.859482,ecu,log,Active Slot: B | Target Slot: A
+2026-01-10T16:14:59.844698,ecu,status,Flashing Slot A
+2026-01-10T16:14:59.844698,ecu,log,Writing image to Partition A...
+2026-01-10T16:14:59.845697,ecu,log,[Slot A] Writing block 1/3...
+2026-01-10T16:15:00.498921,ecu,log,[Slot A] Writing block 2/3...
+2026-01-10T16:15:01.045039,ecu,log,[Slot A] Writing block 3/3...
+2026-01-10T16:15:01.705758,ecu,log,[Slot A] Checksum verification passed.
+2026-01-10T16:15:02.145774,ecu,log,Swapping active partition to Slot A...
+2026-01-10T16:15:03.153585,ecu,log,Rebooting into Slot A...
+2026-01-10T16:15:04.707885,ecu,status,COMPROMISED
+2026-01-10T16:15:04.708883,ecu,log,[!!!] BOOT ERROR: MALICIOUS CODE DETECTED IN STARTUP.
+2026-01-10T16:15:04.709889,ecu,log,[!!!] WATCHDOG DISABLED. SYSTEM HANG.
+2026-01-10T16:15:04.710886,ecu,log,[X] STUCK ON CORRUPT SLOT A.
+2026-01-10T16:15:04.711883,ecu,log,----------------------------------------
+2026-01-10T16:15:04.711883,tcu,log,ACK received from ECU for malicious_firmware_v1.3.bin.
+2026-01-10T16:15:04.712881,tcu,log,Version updated to 1.3 in config.ini
+2026-01-10T16:15:04.712881,tcu,status,Success
+2026-01-10T16:15:11.931391,ecu,log,ECU Watchdog/Resilience is now ON.
+2026-01-11T21:03:56.174242,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:03:56.277583,ecu,log,ECU Receiver process started.
+2026-01-11T21:03:56.388363,server,status,Running
+2026-01-11T21:03:56.388363,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:03:56.388363,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:03:56.388363,server,log,* Debug mode: off
+2026-01-11T21:03:56.388363,malicious_server,status,Running
+2026-01-11T21:03:56.388363,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:03:56.389507,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:03:56.389507,malicious_server,log,* Debug mode: off
+2026-01-11T21:03:57.307935,ecu,status,Listening
+2026-01-11T21:03:57.308455,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:03:58.353550,tcu,status,Idle
+2026-01-11T21:03:58.353550,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:04:41.867154,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:04:41.977989,ecu,log,ECU Receiver process started.
+2026-01-11T21:04:42.078394,malicious_server,status,Running
+2026-01-11T21:04:42.078394,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:04:42.079409,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:04:42.079409,malicious_server,log,* Debug mode: off
+2026-01-11T21:04:42.079409,server,status,Running
+2026-01-11T21:04:42.079409,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:04:42.079409,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:04:42.079409,server,log,* Debug mode: off
+2026-01-11T21:04:42.895536,ecu,status,Listening
+2026-01-11T21:04:42.895536,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:04:44.020589,tcu,status,Idle
+2026-01-11T21:04:44.020589,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:04:48.648991,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:04:48.649877,tcu,status,Checking
+2026-01-11T21:04:48.649877,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:04:49.163476,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:04:49.163476,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:04:49.164480,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:04:49.164480,tcu,status,Idle
+2026-01-11T21:04:53.620238,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:04:53.620238,ecu,log,ECU Receiver process started.
+2026-01-11T21:04:53.822318,server,status,Running
+2026-01-11T21:04:53.822318,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:04:53.822318,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:04:53.822318,server,log,* Debug mode: off
+2026-01-11T21:04:53.823323,malicious_server,status,Running
+2026-01-11T21:04:53.823323,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:04:53.823323,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:04:53.823323,malicious_server,log,* Debug mode: off
+2026-01-11T21:04:54.657037,ecu,status,Listening
+2026-01-11T21:04:54.657037,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:04:55.085675,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-11T21:04:55.738236,tcu,status,Idle
+2026-01-11T21:04:55.738236,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:04:57.498799,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:04:57.498799,tcu,status,Checking
+2026-01-11T21:04:57.499796,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:04:57.917472,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:04:57.917472,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:04:58.019619,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:04:58.020618,tcu,status,Idle
+2026-01-11T21:05:00.975485,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:05:00.975485,tcu,status,Checking
+2026-01-11T21:05:00.976565,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:05:01.506719,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:05:01.506719,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:05:01.507724,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:05:01.507724,tcu,status,Idle
+2026-01-11T21:05:03.439397,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:05:03.439397,tcu,status,Checking
+2026-01-11T21:05:03.440462,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:05:03.879149,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:05:03.987856,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:05:03.988856,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:05:03.988856,tcu,status,Idle
+2026-01-11T21:05:25.630386,tcu,log,Checksum Verification is now ON.
+2026-01-11T21:05:26.174193,tcu,log,Checksum Verification is now OFF.
+2026-01-11T21:05:31.044362,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:05:31.044362,ecu,log,ECU Receiver process started.
+2026-01-11T21:05:31.263723,malicious_server,status,Running
+2026-01-11T21:05:31.263723,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:05:31.263723,server,status,Running
+2026-01-11T21:05:31.264732,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:05:31.264732,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:05:31.264732,malicious_server,log,* Debug mode: off
+2026-01-11T21:05:31.264732,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:05:31.264732,server,log,* Debug mode: off
+2026-01-11T21:05:32.033662,ecu,status,Listening
+2026-01-11T21:05:32.034602,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:05:33.173028,tcu,status,Idle
+2026-01-11T21:05:33.173650,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:05:36.328549,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-11T21:05:41.869625,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:05:41.869625,tcu,status,Checking
+2026-01-11T21:05:41.870740,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:05:42.305980,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:05:42.415540,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:05:42.415540,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:05:42.415540,tcu,status,Idle
+2026-01-11T21:06:24.292898,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.3.bin'.
+2026-01-11T21:06:25.229138,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:06:25.230138,tcu,status,Checking
+2026-01-11T21:06:25.230138,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:06:25.667466,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:06:25.779855,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:06:25.779855,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:06:25.779855,tcu,status,Idle
+2026-01-11T21:12:49.937394,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:12:50.047713,ecu,log,ECU Receiver process started.
+2026-01-11T21:12:50.156158,server,status,Running
+2026-01-11T21:12:50.156158,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:12:50.156158,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:12:50.157275,server,log,* Debug mode: off
+2026-01-11T21:12:50.157275,malicious_server,status,Running
+2026-01-11T21:12:50.157275,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:12:50.157275,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:12:50.157275,malicious_server,log,* Debug mode: off
+2026-01-11T21:12:50.998773,ecu,status,Listening
+2026-01-11T21:12:50.999774,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:12:52.126303,tcu,status,Idle
+2026-01-11T21:12:52.127292,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:12:54.015169,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:12:54.015169,tcu,status,Checking
+2026-01-11T21:12:54.016240,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:12:54.421385,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:12:54.529964,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:12:54.529964,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:12:54.530966,tcu,status,Idle
+2026-01-11T21:12:57.819542,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-11T21:12:58.975923,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:12:58.976912,tcu,status,Checking
+2026-01-11T21:12:58.976912,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:12:59.410800,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:12:59.410800,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:12:59.410800,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:12:59.412136,tcu,status,Idle
+2026-01-11T21:22:08.249176,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:22:08.357611,ecu,log,ECU Receiver process started.
+2026-01-11T21:22:08.465345,server,status,Running
+2026-01-11T21:22:08.466360,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:22:08.466360,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:22:08.466360,server,log,* Debug mode: off
+2026-01-11T21:22:08.466360,malicious_server,status,Running
+2026-01-11T21:22:08.466360,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:22:08.466360,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:22:08.466360,malicious_server,log,* Debug mode: off
+2026-01-11T21:22:09.304321,ecu,status,Listening
+2026-01-11T21:22:09.305204,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:22:10.478237,tcu,status,Idle
+2026-01-11T21:22:10.478237,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:22:29.118046,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:22:29.231566,ecu,log,ECU Receiver process started.
+2026-01-11T21:22:29.340702,malicious_server,status,Running
+2026-01-11T21:22:29.340702,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:22:29.340702,server,status,Running
+2026-01-11T21:22:29.341703,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:22:29.341703,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:22:29.341703,malicious_server,log,* Debug mode: off
+2026-01-11T21:22:29.341703,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:22:29.341703,server,log,* Debug mode: off
+2026-01-11T21:22:30.244853,ecu,status,Listening
+2026-01-11T21:22:30.244853,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:22:31.353733,tcu,status,Idle
+2026-01-11T21:22:31.353733,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:22:37.932076,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-11T21:22:39.272741,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:22:39.273746,tcu,status,Checking
+2026-01-11T21:22:39.273746,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:22:39.707771,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:22:39.708654,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:22:39.816341,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:22:39.816888,tcu,status,Idle
+2026-01-11T21:24:17.854599,server,log, DEPLOYED: 'firmware_v1.3.bin'.
+2026-01-11T21:24:18.174838,server,log, DEPLOYED: 'firmware_v1.4.bin'.
+2026-01-11T21:24:18.491380,server,log, DEPLOYED: 'firmware_v1.5.bin'.
+2026-01-11T21:24:18.710787,server,log, DEPLOYED: 'firmware_v1.6.bin'.
+2026-01-11T21:24:18.820477,server,log, DEPLOYED: 'firmware_v1.7.bin'.
+2026-01-11T21:24:21.604232,malicious_server,log, MALICIOUS DEPLOY: Deployed 'malicious_firmware_v1.8.bin'.
+2026-01-11T21:24:25.108655,ecu,log,ECU Watchdog/Resilience is now OFF.
+2026-01-11T21:24:26.554881,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:24:26.554881,tcu,status,Checking
+2026-01-11T21:24:26.555884,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:24:27.101044,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:24:27.101044,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:24:27.101044,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:24:27.101044,tcu,status,Idle
+2026-01-11T21:34:21.216203,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:34:21.321850,ecu,log,ECU Receiver process started.
+2026-01-11T21:34:21.431320,server,status,Running
+2026-01-11T21:34:21.431320,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:34:21.431320,malicious_server,status,Running
+2026-01-11T21:34:21.431320,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:34:21.432473,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:34:21.432473,server,log,* Debug mode: off
+2026-01-11T21:34:21.432473,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:34:21.432473,malicious_server,log,* Debug mode: off
+2026-01-11T21:34:22.363361,ecu,status,Listening
+2026-01-11T21:34:22.364363,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:34:23.438749,tcu,status,Idle
+2026-01-11T21:34:23.439776,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:34:30.147324,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:34:30.148354,tcu,status,Checking
+2026-01-11T21:34:30.148354,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:34:30.584565,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:34:30.695057,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:34:30.696085,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:34:30.696085,tcu,status,Idle
+2026-01-11T21:34:56.780834,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:34:56.890821,ecu,log,ECU Receiver process started.
+2026-01-11T21:34:57.000641,server,status,Running
+2026-01-11T21:34:57.000641,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:34:57.000641,malicious_server,status,Running
+2026-01-11T21:34:57.001834,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:34:57.001834,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:34:57.001834,server,log,* Debug mode: off
+2026-01-11T21:34:57.001834,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:34:57.001834,malicious_server,log,* Debug mode: off
+2026-01-11T21:34:57.937472,ecu,status,Listening
+2026-01-11T21:34:57.938558,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:34:58.972090,tcu,status,Idle
+2026-01-11T21:34:58.972090,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:39:03.276396,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:39:03.276396,ecu,log,ECU Receiver process started.
+2026-01-11T21:39:03.494088,malicious_server,status,Running
+2026-01-11T21:39:03.494996,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:39:03.494996,server,status,Running
+2026-01-11T21:39:03.494996,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:39:03.494996,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:39:03.496073,malicious_server,log,* Debug mode: off
+2026-01-11T21:39:03.496073,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:39:03.496073,server,log,* Debug mode: off
+2026-01-11T21:39:04.352885,ecu,status,Listening
+2026-01-11T21:39:04.353955,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:39:05.506957,tcu,status,Idle
+2026-01-11T21:39:05.507985,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:39:08.518363,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:39:08.518363,tcu,status,Checking
+2026-01-11T21:39:08.519381,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:39:08.956378,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:39:08.957408,tcu,log,TCU CRITICAL ERROR: name 'headers' is not defined
+2026-01-11T21:39:08.957408,tcu,status,Crashed
+2026-01-11T21:39:47.694217,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:39:47.796190,ecu,log,ECU Receiver process started.
+2026-01-11T21:39:48.006431,server,status,Running
+2026-01-11T21:39:48.007529,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:39:48.007529,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:39:48.007529,server,log,* Debug mode: off
+2026-01-11T21:39:48.007529,malicious_server,status,Running
+2026-01-11T21:39:48.007529,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:39:48.008530,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:39:48.008530,malicious_server,log,* Debug mode: off
+2026-01-11T21:39:48.851284,ecu,status,Listening
+2026-01-11T21:39:48.851284,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:39:49.928781,tcu,status,Idle
+2026-01-11T21:39:49.929670,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:39:51.524763,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:39:51.525788,tcu,status,Checking
+2026-01-11T21:39:51.525788,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:39:52.072541,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:39:52.073564,tcu,log,[!] Connection Error to http://127.0.0.1:5000: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/check-update
+2026-01-11T21:39:52.073564,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:39:52.073564,tcu,log,[!] Connection Error to http://127.0.0.1:5001: 500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5001/check-update
+2026-01-11T21:39:52.074560,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:39:52.074560,tcu,status,Idle
+2026-01-11T21:40:03.713464,malicious_server,log, ERROR: too many values to unpack (expected 2)
+2026-01-11T21:44:11.766873,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-11T21:44:11.766873,ecu,log,ECU Receiver process started.
+2026-01-11T21:44:12.204383,malicious_server,status,Running
+2026-01-11T21:44:12.205268,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-11T21:44:12.205268,server,status,Running
+2026-01-11T21:44:12.205268,server,log,[+] OEM Server process started on port 5000.
+2026-01-11T21:44:12.205268,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-11T21:44:12.206267,malicious_server,log,* Debug mode: off
+2026-01-11T21:44:12.206267,server,log,* Serving Flask app 'oem_server'
+2026-01-11T21:44:12.206267,server,log,* Debug mode: off
+2026-01-11T21:44:12.822748,ecu,status,Listening
+2026-01-11T21:44:12.823761,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-11T21:44:14.072747,tcu,status,Idle
+2026-01-11T21:44:14.072747,tcu,log,TCU Client process started. Waiting for trigger...
+2026-01-11T21:44:15.012343,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-11T21:44:16.564304,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:44:16.564304,tcu,status,Checking
+2026-01-11T21:44:16.564304,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:44:17.003933,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:44:17.003933,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:44:17.003933,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:44:17.003933,tcu,status,Idle
+2026-01-11T21:44:20.018205,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:44:20.019122,tcu,status,Checking
+2026-01-11T21:44:20.019122,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:44:20.453899,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:44:20.454928,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:44:20.454928,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:44:20.454928,tcu,status,Idle
+2026-01-11T21:44:22.307829,tcu,log,[~] Manual update check triggered.
+2026-01-11T21:44:22.308900,tcu,status,Checking
+2026-01-11T21:44:22.308900,tcu,log,TCU (v1.0) broadcasting update request...
+2026-01-11T21:44:22.829956,tcu,log,-> Pinging OEM Server at http://127.0.0.1:5000...
+2026-01-11T21:44:22.830944,tcu,log,-> Pinging Backup/External Server at http://127.0.0.1:5001...
+2026-01-11T21:44:22.830944,tcu,log,Current version v1.0 is up to date.
+2026-01-11T21:44:22.830944,tcu,status,Idle
+2026-01-11T21:44:27.328734,ecu,log,ECU Watchdog/Resilience is now ON.
+2026-01-11T21:44:27.874777,ecu,log,ECU Watchdog/Resilience is now OFF.
+2026-01-16T21:11:31.247467,server,log, SERVER READY: Deployed 'firmware_v1.1.bin'.
+2026-01-16T21:11:31.379158,ecu,log,ECU Receiver process started.
+2026-01-16T21:11:31.582376,tcu,status,Idle
+2026-01-16T21:11:31.582376,server,status,Running
+2026-01-16T21:11:31.582376,server,log,[+] OEM Server process started on port 5000.
+2026-01-16T21:11:31.583380,malicious_server,status,Running
+2026-01-16T21:11:31.583380,malicious_server,log,[!] Malicious Server process started on port 5001.
+2026-01-16T21:11:31.583380,malicious_server,log,* Serving Flask app 'malicious_server'
+2026-01-16T21:11:31.583380,malicious_server,log,* Debug mode: off
+2026-01-16T21:11:31.583380,server,log,* Serving Flask app 'oem_server'
+2026-01-16T21:11:31.583380,server,log,* Debug mode: off
+2026-01-16T21:11:32.404968,ecu,status,Listening
+2026-01-16T21:11:32.404968,ecu,log,[o] ECU Online. Booted from Slot A (v1.0).
+2026-01-16T21:11:41.736070,tcu,log,[~] Manual update check triggered.
+2026-01-16T21:11:41.737077,tcu,status,Checking
+2026-01-16T21:11:41.737077,tcu,log,TCU (v1.0) checking for updates...
+2026-01-16T21:11:41.737077,server,log,TCU connected. ID Verified: Unknown_Vehicle
+2026-01-16T21:11:41.737077,server,log,Scanning 'updates'...
+2026-01-16T21:11:42.496012,server,log,Latest version available: firmware_v1.1.bin (v1.1)
+2026-01-16T21:11:42.497012,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2026-01-16T21:11:43.252770,tcu,log,New version found: 1.1
+2026-01-16T21:11:43.253770,tcu,status,Downloading
+2026-01-16T21:11:43.253770,tcu,progress,0
+2026-01-16T21:11:44.089858,server,log,Serving firmware_v1.1.bin to TCU...
+2026-01-16T21:11:44.089858,tcu,progress,100.0
+2026-01-16T21:11:44.090859,tcu,log,Download complete.
+2026-01-16T21:11:44.090859,tcu,progress,100
+2026-01-16T21:11:44.836969,tcu,status,Verifying
+2026-01-16T21:11:44.836969,tcu,log,Verifying file integrity...
+2026-01-16T21:11:45.604185,tcu,log,Checksum match! File is valid.
+2026-01-16T21:11:46.352997,tcu,log,Transferred 'firmware_v1.1.bin' to ECU folder.
+2026-01-16T21:11:46.353997,tcu,status,Awaiting ACK
+2026-01-16T21:11:46.353997,tcu,log,Waiting for ECU acknowledgment for firmware_v1.1.bin...
+2026-01-16T21:11:46.462791,ecu,status,Updating...
+2026-01-16T21:11:46.463793,ecu,log,----------------------------------------
+2026-01-16T21:11:46.463793,ecu,log,New firmware detected: firmware_v1.1.bin
+2026-01-16T21:11:46.463793,ecu,log,Active Slot: A | Target Slot: B
+2026-01-16T21:11:47.474099,ecu,status,Flashing Slot B
+2026-01-16T21:11:47.475098,ecu,log,Writing image to Partition B...
+2026-01-16T21:11:47.475098,ecu,log,[Slot B] Writing block 1/3...
+2026-01-16T21:11:48.078222,ecu,log,[Slot B] Writing block 2/3...
+2026-01-16T21:11:48.710010,ecu,log,[Slot B] Writing block 3/3...
+2026-01-16T21:11:49.368309,ecu,log,[Slot B] Checksum verification passed.
+2026-01-16T21:11:49.913446,ecu,log,Swapping active partition to Slot B...
+2026-01-16T21:11:50.833720,ecu,log,Rebooting into Slot B...
+2026-01-16T21:11:52.364840,ecu,log,Boot successful. System running on Slot B (v1.1.).
+2026-01-16T21:11:52.365874,ecu,status,Success
+2026-01-16T21:11:52.365874,ecu,log,----------------------------------------
+2026-01-16T21:11:52.365874,tcu,log,ACK received from ECU.
+2026-01-16T21:11:52.366879,tcu,log,Update successful.
+2026-01-16T21:11:52.366879,tcu,status,Success
+2026-01-16T21:11:55.568579,server,log, DEPLOYED: 'firmware_v1.2.bin'.
+2026-01-16T21:11:56.382672,ecu,status,Slot B Active
+2026-01-16T21:11:57.104985,tcu,log,[~] Manual update check triggered.
+2026-01-16T21:11:57.104985,tcu,status,Checking
+2026-01-16T21:11:57.105990,tcu,log,TCU (v1.1) checking for updates...
+2026-01-16T21:11:57.105990,server,log,TCU connected. ID Verified: Unknown_Vehicle
+2026-01-16T21:11:57.105990,server,log,Scanning 'updates'...
+2026-01-16T21:11:57.853794,server,log,Latest version available: firmware_v1.2.bin (v1.2)
+2026-01-16T21:11:57.853794,malicious_server,log,TCU connected. Scanning 'malicious_updates'...
+2026-01-16T21:11:58.589192,tcu,log,New version found: 1.2
+2026-01-16T21:11:58.589192,tcu,status,Downloading
+2026-01-16T21:11:58.589192,tcu,progress,0
+2026-01-16T21:11:59.410894,server,log,Serving firmware_v1.2.bin to TCU...
+2026-01-16T21:11:59.410894,tcu,progress,100.0
+2026-01-16T21:11:59.410894,tcu,log,Download complete.
+2026-01-16T21:11:59.412037,tcu,progress,100
+2026-01-16T21:12:00.156132,tcu,status,Verifying
+2026-01-16T21:12:00.156132,tcu,log,Verifying file integrity...
+2026-01-16T21:12:00.896109,tcu,log,Checksum match! File is valid.
+2026-01-16T21:12:01.658318,tcu,log,Transferred 'firmware_v1.2.bin' to ECU folder.
+2026-01-16T21:12:01.659319,tcu,status,Awaiting ACK
+2026-01-16T21:12:01.660813,tcu,log,Waiting for ECU acknowledgment for firmware_v1.2.bin...
+2026-01-16T21:12:02.422010,ecu,status,Updating...
+2026-01-16T21:12:02.423009,ecu,log,----------------------------------------
+2026-01-16T21:12:02.423009,ecu,log,New firmware detected: firmware_v1.2.bin
+2026-01-16T21:12:02.423009,ecu,log,Active Slot: B | Target Slot: A
+2026-01-16T21:12:03.513591,ecu,status,Flashing Slot A
+2026-01-16T21:12:03.515096,ecu,log,Writing image to Partition A...
+2026-01-16T21:12:03.516102,ecu,log,[Slot A] Writing block 1/3...
+2026-01-16T21:12:04.059085,ecu,log,[Slot A] Writing block 2/3...
+2026-01-16T21:12:04.713014,ecu,log,[Slot A] Writing block 3/3...
+2026-01-16T21:12:05.259279,ecu,log,[Slot A] Checksum verification passed.
+2026-01-16T21:12:05.804039,ecu,log,Swapping active partition to Slot A...
+2026-01-16T21:12:06.786175,ecu,log,Rebooting into Slot A...
+2026-01-16T21:12:08.313498,ecu,log,Boot successful. System running on Slot A (v1.2.).
+2026-01-16T21:12:08.315004,ecu,status,Success
+2026-01-16T21:12:08.315004,ecu,log,----------------------------------------
+2026-01-16T21:12:08.757256,tcu,log,ACK received from ECU.
+2026-01-16T21:12:08.758257,tcu,log,Update successful.
+2026-01-16T21:12:08.759260,tcu,status,Success
+2026-01-16T21:12:12.333978,ecu,status,Slot A Active
+2026-01-16T21:20:27.979000,ecu,log,ECU Watchdog/Resilience is now ON.
+2026-01-16T21:20:28.523355,ecu,log,ECU Watchdog/Resilience is now OFF.
+2026-01-16T21:20:30.158990,ecu,log,ECU Watchdog/Resilience is now ON.
+2026-01-16T21:20:31.640920,ecu,log,ECU Watchdog/Resilience is now OFF.
